@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 28f5cf2b11b7f264eacd577fbb57ece9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - CathySprite: {fileID: 21300000, guid: 9e5b968e0b237f44582ef33bb0677fd2, type: 3}
+  - EvanSprite: {instanceID: 0}
+  - EmilySprite: {instanceID: 0}
+  - NileshSprite: {instanceID: 0}
+  - OwenSprite: {instanceID: 0}
+  - SteveSprite: {instanceID: 0}
+  - MinghanSprite: {instanceID: 0}
+  - IzzieSprite: {instanceID: 0}
+  - NancySprite: {instanceID: 0}
+  - VanessaSprite: {instanceID: 0}
+  - DerrickSprite: {instanceID: 0}
+  - ByeonggukSprite: {instanceID: 0}
+  - DanielSprite: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
