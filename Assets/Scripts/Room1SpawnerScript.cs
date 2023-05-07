@@ -19,7 +19,7 @@ public class Room1SpawnerScript : MonoBehaviour
         timer++;
         if(timer>=600){
             spawnScript.spawnBattle(1,4, PokeList.Room1CSMon);
-            SceneManager.LoadScene("DemoBattleRoom");
+            //SceneManager.LoadScene("DemoBattleRoom");
         }
 
         if(player.transform.position.x>6){
