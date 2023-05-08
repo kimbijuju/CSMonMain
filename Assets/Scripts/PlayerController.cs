@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown("space"))
             SceneManager.LoadScene("CSDex Scene");
         texterScript.playerPos=transform.position;
-        //
+        //Tony's work
         if (!isMoving)
         {
             input.x = Input.GetAxisRaw("Horizontal");
