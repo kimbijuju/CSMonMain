@@ -165,7 +165,7 @@ MonoBehaviour:
   DerrickSprite: {fileID: 21300000, guid: 2c77dbe97c6f1424692da0ce1f9e3246, type: 3}
   ByeonggukSprite: {fileID: 21300000, guid: 490c982387194f447933497a1e209124, type: 3}
   DanielSprite: {fileID: 21300000, guid: 909502ccc1235ea4eb8d752575167fe8, type: 3}
-  YunxinSprite: {fileID: 21300000, guid: 0fe602b1a36c0af489b516c5a2fc38b6, type: 3}
+  YunxinSprite: {fileID: 21300000, guid: de149d96815789740bdefaa2b3540454, type: 3}
   KrishSprite: {fileID: 21300000, guid: 8cf80460eb122694884a440d1897e874, type: 3}
   BijouSprite: {fileID: 21300000, guid: 1c9b44108df1e934796fe25671d22987, type: 3}
   PeterSprite: {fileID: 21300000, guid: bb14ebf8df9cb8647866a2a6eb479739, type: 3}
