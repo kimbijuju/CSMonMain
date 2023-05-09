@@ -105,11 +105,11 @@ public class PokeList : MonoBehaviour
     
     
     public class CSMon{
-        public float exp;
+        public double exp;
         public string status;
         public int currhp; 
         public CSMonRef refMon;
-        public CSMon(float e, string s, int chp, CSMonRef r){
+        public CSMon(double e, string s, int chp, CSMonRef r){
             exp=e;
             status=s;
             currhp=chp;
