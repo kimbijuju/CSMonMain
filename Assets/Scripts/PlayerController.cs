@@ -32,8 +32,7 @@ public class PlayerController : MonoBehaviour
             input.x = Input.GetAxis("Horizontal");
             input.y = Input.GetAxis("Vertical");
 
-            // remove diagonal movement
-            //if (input.x != 0) input.y = 0;
+           
 
             if (input != Vector2.zero)
             {
@@ -45,7 +44,7 @@ public class PlayerController : MonoBehaviour
                 
                 if (IsWalkable(targetPos)) {
                     StartCoroutine(Move(targetPos));
-                    //transform.position = transform.position + new Vector3(input.x, input.y, 0);
+                 
                 }
             }
         }
