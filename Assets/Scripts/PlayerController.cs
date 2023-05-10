@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         //Bijou work
         if(Input.GetKeyDown("space"))
-            SceneManager.LoadScene("CSDex Scene");
+            SceneManager.LoadScene("OptionsScene");
         texterScript.playerPos=transform.position;
 
         //Tony's work

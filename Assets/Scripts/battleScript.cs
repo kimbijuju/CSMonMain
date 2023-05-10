@@ -673,7 +673,7 @@ public class battleScript : MonoBehaviour
                     for(int i=0; i<swapButtons.Length; i++){
                         PokeList.ObtainedList[i].currhp=PokeList.ObtainedList[i].totalHp();
                     }
-                    
+                    PokeList.enemyList=new List<PokeList.CSMon>();
                     texterScript.currLvlScene="Level1Room";
                     SceneManager.LoadScene(texterScript.currLvlScene);
                 }
