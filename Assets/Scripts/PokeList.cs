@@ -180,9 +180,11 @@ public class PokeList : MonoBehaviour
          
          //Adding possible CSMon to list of wild CSMon
          Room1CSMon.Add(Derrick);
-         Room1CSMon.Add(Krish);
+         Room1CSMon.Add(Aadya);
+         //Room1CSMon.Add(Krish);
          Room1CSMon.Add(Steve);
          Room1CSMon.Add(Vanessa);
+         Room1CSMon.Add(Om);
 
 
          

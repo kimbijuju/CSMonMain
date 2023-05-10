@@ -169,7 +169,9 @@ MonoBehaviour:
   KrishSprite: {fileID: 21300000, guid: 8cf80460eb122694884a440d1897e874, type: 3}
   BijouSprite: {fileID: 21300000, guid: 1c9b44108df1e934796fe25671d22987, type: 3}
   PeterSprite: {fileID: 21300000, guid: b4a07f81a2ffdee45bdcfe8a9483ed4f, type: 3}
-  GraceSprite: {fileID: 21300000, guid: a014a379dbac8b84682c24b5758ca00b, type: 3}
+
+  GraceSprite: {fileID: 21300000, guid: c8b5247d1d786cc47aaf473f238c7235, type: 3}
+
   OmSprite: {fileID: 21300000, guid: e9206f16eb750804ebe5c38b79ec2728, type: 3}
   AadyaSprite: {fileID: 21300000, guid: 692b5fd6822c24e4aaa5951f47b812b5, type: 3}
   BowenSprite: {fileID: 21300000, guid: 3eda16040de6f1c4c829c7b1b4201559, type: 3}
