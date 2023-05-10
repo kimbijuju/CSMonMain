@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f5cf2b11b7f264eacd577fbb57ece9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CathySprite: {fileID: 21300000, guid: 8964813cca48c8944b2ea44220a46993, type: 3}
+  CathySprite: {fileID: 21300000, guid: a7928c194eccc074686973ad10ff9240, type: 3}
   EvanSprite: {fileID: 21300000, guid: 2d62ae0fc40af99458ad7aa030bd5d46, type: 3}
   EmilySprite: {fileID: 21300000, guid: ac05e3d0ea4313d49a1cd5d3f6865c53, type: 3}
   NileshSprite: {fileID: 21300000, guid: c309fdf6e645f0b40b5649d697bbe16b, type: 3}
@@ -164,16 +164,16 @@ MonoBehaviour:
   VanessaSprite: {fileID: 21300000, guid: 0b6200a8b5e6f6744ab1fb9ee6aca615, type: 3}
   DerrickSprite: {fileID: 21300000, guid: 2c77dbe97c6f1424692da0ce1f9e3246, type: 3}
   ByeonggukSprite: {fileID: 21300000, guid: 490c982387194f447933497a1e209124, type: 3}
-  DanielSprite: {fileID: 21300000, guid: 909502ccc1235ea4eb8d752575167fe8, type: 3}
+  DanielSprite: {fileID: 21300000, guid: 9f80fe11cd709284dae0e5f4c26380d7, type: 3}
   YunxinSprite: {fileID: 21300000, guid: de149d96815789740bdefaa2b3540454, type: 3}
   KrishSprite: {fileID: 21300000, guid: 8cf80460eb122694884a440d1897e874, type: 3}
   BijouSprite: {fileID: 21300000, guid: 1c9b44108df1e934796fe25671d22987, type: 3}
-  PeterSprite: {fileID: 21300000, guid: bb14ebf8df9cb8647866a2a6eb479739, type: 3}
+  PeterSprite: {fileID: 21300000, guid: b4a07f81a2ffdee45bdcfe8a9483ed4f, type: 3}
   GraceSprite: {fileID: 21300000, guid: a014a379dbac8b84682c24b5758ca00b, type: 3}
   OmSprite: {fileID: 21300000, guid: e9206f16eb750804ebe5c38b79ec2728, type: 3}
-  AadyaSprite: {fileID: 0}
+  AadyaSprite: {fileID: 21300000, guid: 692b5fd6822c24e4aaa5951f47b812b5, type: 3}
   BowenSprite: {fileID: 21300000, guid: 3eda16040de6f1c4c829c7b1b4201559, type: 3}
-  MehkiSprite: {fileID: 0}
+  MehkiSprite: {fileID: 21300000, guid: 91291aecb040df74ca6484079b04941c, type: 3}
   RuthieSprite: {fileID: 0}
   AbigailSprite: {fileID: 0}
   VishwaSprite: {fileID: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
   JessicaSprite: {fileID: 0}
   AndrewSprite: {fileID: 21300000, guid: 8603ada1100cc8f4abcc9887b6097ca3, type: 3}
   BennetSprite: {fileID: 0}
-  CalebSprite: {fileID: 0}
+  CalebSprite: {fileID: 21300000, guid: edcfe047cda719e4db893f26afe4667d, type: 3}
 --- !u!4 &754844322
 Transform:
   m_ObjectHideFlags: 0
