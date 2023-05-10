@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class battleScript : MonoBehaviour
 {
@@ -105,21 +106,33 @@ public class battleScript : MonoBehaviour
         }
         swapButtons= new GameObject[swapNum];
         for(int i=0; i<swapNum; i++){
-            if(i==0)
+            if(i==0){
                 swapButtons[i]=swap1;
-            else if(i==1)
+                swap1.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[0].refMon.look;
+            }
+            else if(i==1){
                 swapButtons[i]=swap2;
-            else if(i==2)
+                swap2.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[1].refMon.look;
+            }
+            else if(i==2){
                 swapButtons[i]=swap3;
-            else if(i==3)
+                swap3.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[2].refMon.look;
+            }
+            else if(i==3){
                 swapButtons[i]=swap4;
-            else if(i==4)
+                swap4.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[3].refMon.look;
+            }
+            else if(i==4){
                 swapButtons[i]=swap5;
-            else if(i==5)
+                swap5.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[4].refMon.look;
+            }
+            else if(i==5){
                 swapButtons[i]=swap6;
+                swap6.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[5].refMon.look;
+            }
 
         }
-        swapNum=1;
+        swapNum=0;
         
         swap1.GetComponent<SpriteRenderer>().color=transCol;
         swap2.GetComponent<SpriteRenderer>().color=transCol;
@@ -129,12 +142,12 @@ public class battleScript : MonoBehaviour
         swap6.GetComponent<SpriteRenderer>().color=transCol;
         selectSq.GetComponent<SpriteRenderer>().color=transCol;
 
-        swap1.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[0].refMon.look;
-        swap2.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[1].refMon.look;
-        swap3.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[2].refMon.look;
-        swap4.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[3].refMon.look;
-        swap5.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[4].refMon.look;
-        swap6.GetComponent<SpriteRenderer>().sprite=PokeList.ObtainedList[5].refMon.look;
+        
+        
+        
+        
+        
+        
 
         // Key for Status: [0,1,2,3,4,5]=[Byonguk Speed Buff, Andrew Speed Boost, Charging, Dmg reduc, Dmg Boost, Burning]
         // Dmg reduc: if 1, 50% decrease. if 2, 100% decrease 
@@ -305,11 +318,14 @@ public class battleScript : MonoBehaviour
                                         else{
                                             textList.Enqueue("You have no healthy CSMon left!");
                                             textList.Enqueue("You lose this battle!");
+                                            
+                                            
+
                                         }
                                     }
                                     else
                                         textList.Enqueue("What will you do?");
-                                    
+                                        
 
                                 }
                                 //enemy died before it could attack
@@ -328,6 +344,7 @@ public class battleScript : MonoBehaviour
                                     
                                     if(PokeList.enemyList.Count<currEnemyMon+2){
                                         textList.Enqueue("You win this battle!");
+                                        
                                     }
                                     //more enemies
                                     else{
@@ -364,6 +381,7 @@ public class battleScript : MonoBehaviour
                                     
                                         if(PokeList.enemyList.Count<currEnemyMon+2){
                                             textList.Enqueue("You win this battle!");
+                                            
                                         }
                                         //more enemies
                                         else{
@@ -392,6 +410,8 @@ public class battleScript : MonoBehaviour
                                     else{
                                         textList.Enqueue("You have no healthy CSMon left!");
                                         textList.Enqueue("You lose this battle!");
+                                        
+                                        
                                     }
                                 }
                             }
@@ -567,6 +587,8 @@ public class battleScript : MonoBehaviour
                     //successfully catch them
                     if(chance>100.0*enemyMon.currhp/enemyMon.totalHp()){
                         textList.Enqueue("You caught "+enemyMon.refMon.name+"!");
+                        textList.Enqueue("You win this battle!");
+                        PokeList.ObtainedList.Add(enemyMon);
                     }
                     //fail to catch them
                     else{
@@ -595,6 +617,8 @@ public class battleScript : MonoBehaviour
                             else{
                                 textList.Enqueue("You have no healthy CSMon left!");
                                 textList.Enqueue("You lose this battle!");
+                                
+                                
                             }
                         }
                         else{
@@ -636,6 +660,19 @@ public class battleScript : MonoBehaviour
                 enemyHPBar.rectTransform.sizeDelta= new Vector2(225*enemyMon.currhp/enemyMon.totalHp(), 25);
                 for(int i=1; i<=5; i++)
                     eStatus[i]=0;
+            }
+            //leaving battle room
+            else if(texter.text=="You lose this battle!"){
+                for(int i=0; i<swapNum; i++){
+                    PokeList.ObtainedList[i].currhp=PokeList.ObtainedList[i].totalHp();
+                }
+                texterScript.currLvlScene="Level1Room";
+                SceneManager.LoadScene(texterScript.currLvlScene);
+            }
+            else if(texter.text=="You win this battle!"){
+                PokeList.enemyList=new List<PokeList.CSMon>();
+                SceneManager.LoadScene(texterScript.currLvlScene);
+
             }
 
            
