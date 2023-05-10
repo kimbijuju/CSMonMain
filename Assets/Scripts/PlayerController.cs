@@ -85,9 +85,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(transform.position, 0.2f, grassLayer) != null)
         {
-            if (Random.Range(1, 101) <= 10)
+            if (Random.Range(1, 100) <= 10)
             {
-                spawnScript.spawnBattle(1,4, PokeList.Room1CSMon);
+                spawnScript.spawnBattle(1,5, PokeList.Room1CSMon);
                 SceneManager.LoadScene("DemoBattleRoom");
             }
         }

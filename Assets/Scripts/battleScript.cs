@@ -667,19 +667,27 @@ public class battleScript : MonoBehaviour
             }
             //leaving battle room
             else if(texter.text=="You lose this battle!"){
-                for(int i=0; i<swapNum; i++){
-                    PokeList.ObtainedList[i].currhp=PokeList.ObtainedList[i].totalHp();
+                if(Input.GetKeyDown("space")){
+                    
+                
+                    for(int i=0; i<swapButtons.Length; i++){
+                        PokeList.ObtainedList[i].currhp=PokeList.ObtainedList[i].totalHp();
+                    }
+                    
+                    texterScript.currLvlScene="Level1Room";
+                    SceneManager.LoadScene(texterScript.currLvlScene);
                 }
-                texterScript.currLvlScene="Level1Room";
-                SceneManager.LoadScene(texterScript.currLvlScene);
             }
+            
             else if(texter.text=="You win this battle!"){
-                PokeList.enemyList=new List<PokeList.CSMon>();
-                SceneManager.LoadScene(texterScript.currLvlScene);
+                if(Input.GetKeyDown("space")){
+                    PokeList.enemyList=new List<PokeList.CSMon>();
+                    SceneManager.LoadScene(texterScript.currLvlScene);
+                }
 
 
             }
-
+            
            
             if(Input.GetKeyDown("space")){
                 textList.Dequeue();
