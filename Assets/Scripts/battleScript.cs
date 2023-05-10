@@ -179,6 +179,7 @@ public class battleScript : MonoBehaviour
             if(texter.text=="What will you do?"){
                 //End of round stuff
 
+
                 //if anything importnat for last round stuff happened
                 if((playerDmg>0 && PokeList.ObtainedList[prevPlayerMon]==playerMon && (playerMon.refMon==PokeList.Nilesh || playerMon.refMon==PokeList.Daniel || playerMon.refMon==PokeList.Steve) )|| (enemyDmg>0 && PokeList.enemyList[prevEnemyMon]==enemyMon && (enemyMon.refMon==PokeList.Nilesh || enemyMon.refMon==PokeList.Daniel || enemyMon.refMon==PokeList.Steve)) || (playerDmg>0 && PokeList.enemyList[prevEnemyMon]==enemyMon && enemyMon.refMon==PokeList.Grace) || (enemyDmg>0 && PokeList.ObtainedList[prevPlayerMon]==playerMon && playerMon.refMon==PokeList.Grace)){
                     textList.Dequeue();
@@ -233,6 +234,7 @@ public class battleScript : MonoBehaviour
                             
                         }
                     }
+
 
                     playerHPBar.rectTransform.sizeDelta= new Vector2(225*playerMon.currhp/playerMon.totalHp(), 25);
                     enemyHPBar.rectTransform.sizeDelta= new Vector2(225*playerMon.currhp/playerMon.totalHp(), 25);
@@ -587,8 +589,10 @@ public class battleScript : MonoBehaviour
                     //successfully catch them
                     if(chance>100.0*enemyMon.currhp/enemyMon.totalHp()){
                         textList.Enqueue("You caught "+enemyMon.refMon.name+"!");
+
                         textList.Enqueue("You win this battle!");
                         PokeList.ObtainedList.Add(enemyMon);
+
                     }
                     //fail to catch them
                     else{
@@ -617,8 +621,7 @@ public class battleScript : MonoBehaviour
                             else{
                                 textList.Enqueue("You have no healthy CSMon left!");
                                 textList.Enqueue("You lose this battle!");
-                                
-                                
+
                             }
                         }
                         else{
@@ -660,6 +663,7 @@ public class battleScript : MonoBehaviour
                 enemyHPBar.rectTransform.sizeDelta= new Vector2(225*enemyMon.currhp/enemyMon.totalHp(), 25);
                 for(int i=1; i<=5; i++)
                     eStatus[i]=0;
+
             }
             //leaving battle room
             else if(texter.text=="You lose this battle!"){
@@ -672,6 +676,7 @@ public class battleScript : MonoBehaviour
             else if(texter.text=="You win this battle!"){
                 PokeList.enemyList=new List<PokeList.CSMon>();
                 SceneManager.LoadScene(texterScript.currLvlScene);
+
 
             }
 

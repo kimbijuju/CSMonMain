@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     public LayerMask solidObjectsLayer;
+    public LayerMask grassLayer;
+
 
     private bool isMoving;
     private Vector2 input;
@@ -24,27 +26,31 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown("space"))
             SceneManager.LoadScene("CSDex Scene");
         texterScript.playerPos=transform.position;
-        //
+
+        //Tony's work
+        
         if (!isMoving)
         {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
+            input.x = Input.GetAxis("Horizontal");
+            input.y = Input.GetAxis("Vertical");
 
-            // remove diagonal movement
-            if (input.x != 0) input.y = 0;
+           
 
             if (input != Vector2.zero)
             {
-                
 
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
 
-                if (IsWalkable(targetPos))
+                
+                if (IsWalkable(targetPos)) {
                     StartCoroutine(Move(targetPos));
+                 
+                }
             }
         }
+        
 
         
     }
@@ -61,15 +67,35 @@ public class PlayerController : MonoBehaviour
         transform.position = targetPos;
 
         isMoving = false;
+
+        CheckForEncounters();
+
     }
 
     private bool IsWalkable(Vector3 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer) != null)
+        if (Physics2D.OverlapCircle(targetPos, -0.2f, solidObjectsLayer) != null)
         {
             return false;
         }
 
         return true;
     }
+    private void CheckForEncounters()
+    {
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, grassLayer) != null)
+        {
+            if (Random.Range(1, 101) <= 10)
+            {
+                spawnScript.spawnBattle(1,4, PokeList.Room1CSMon);
+                SceneManager.LoadScene("DemoBattleRoom");
+            }
+        }
+    }
 }
+
+
+
+
+
+

@@ -9,6 +9,7 @@ public class demoPrepScript : MonoBehaviour
     void Start()
     {
         PokeList.ObtainedList.Add(new PokeList.CSMon(100, "", (PokeList.Daniel.hp)*100, PokeList.Daniel));
+
         //PokeList.ObtainedList.Add(new PokeList.CSMon(100, "", (PokeList.Evan.hp)*100, PokeList.Evan));
         //PokeList.ObtainedList.Add(new PokeList.CSMon(100, "", (PokeList.Bijou.hp)*100, PokeList.Bijou));
         
@@ -16,6 +17,7 @@ public class demoPrepScript : MonoBehaviour
         //PokeList.ObtainedList.Add(new PokeList.CSMon(100, "", (PokeList.Steve.hp)*100, PokeList.Steve));
         //PokeList.ObtainedList.Add(new PokeList.CSMon(100, "", (PokeList.Derrick.hp)*100, PokeList.Derrick));
         //PokeList.ObtainedList.Add(new PokeList.CSMon(100, "", (PokeList.Emily.hp)*100, PokeList.Emily));
+
         
         PokeList.enemyList.Add(new PokeList.CSMon(100, "", (PokeList.Grace.hp)*100, PokeList.Grace));
 
