@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isMoving;
     private Vector2 input;
-
    
     private void Start(){
     //Bijou work
@@ -28,11 +27,13 @@ public class PlayerController : MonoBehaviour
         texterScript.playerPos=transform.position;
 
         //Tony's work
+
+        float speed = 7f;
         
         if (!isMoving)
         {
-            input.x = Input.GetAxis("Horizontal");
-            input.y = Input.GetAxis("Vertical");
+            input.x = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
+            input.y = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
 
            
 
@@ -45,8 +46,9 @@ public class PlayerController : MonoBehaviour
 
                 
                 if (IsWalkable(targetPos)) {
-                    StartCoroutine(Move(targetPos));
-                 
+                    //StartCoroutine(Move(targetPos));
+                    transform.position = targetPos;
+                    CheckForEncounters();
                 }
             }
         }
@@ -85,7 +87,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(transform.position, 0.2f, grassLayer) != null)
         {
-            if (Random.Range(1, 100) <= 10)
+            if (Random.Range(1, 5001) <= 10)
             {
                 spawnScript.spawnBattle(1,5, PokeList.Room1CSMon);
                 SceneManager.LoadScene("DemoBattleRoom");
