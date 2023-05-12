@@ -26,8 +26,9 @@ public class Room1SpawnerScript : MonoBehaviour
         if(player.transform.position.x>41.44 && player.transform.position.y>14){
             texterScript.playerPos.x=-6f;
             texterScript.playerPos.y=-1f;
-
+            texterScript.currLvlScene="Level1Room";
             SceneManager.LoadScene("Level2Room");
+            
         }
             
 
