@@ -37,6 +37,7 @@ public class PokeList : MonoBehaviour
     public Sprite BennetSprite;
     public Sprite CalebSprite;
     
+    
 
     
     
@@ -124,7 +125,7 @@ public class PokeList : MonoBehaviour
             return res;
         } 
         public string printHeader(){
-            string res="Level "+this.lvl()+" "+this.refMon.name;
+            string res="Lvl "+this.lvl()+" "+this.refMon.name;
             return res;
         }
         public int lvl(){
@@ -148,6 +149,7 @@ public class PokeList : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
+         Aadya= new CSMonRef("Aadya", 90, 30, 10, 90, 30, "Shroomform", "Grass", AadyaSprite, "");
          Abigail= new CSMonRef("Abigail", 80, 90, 50, 30, 10, "Homerun", "Grass", AbigailSprite, "");
          Andrew= new CSMonRef("Andrew", 50, 60, 30, 80, 20, "Senior Blitz", "Fire", AndrewSprite, "Each time Senior Blitz lands, Andrew's speed doubles, capping at x8");
          Bennet= new CSMonRef("Bennet", 70, 30, 60, 90, 40, "Smoulder", "Fire", BennetSprite, "When Smoulder crits, it instead burns the target for the next 3 turns");
@@ -178,9 +180,11 @@ public class PokeList : MonoBehaviour
          
          //Adding possible CSMon to list of wild CSMon
          Room1CSMon.Add(Derrick);
-         Room1CSMon.Add(Krish);
+         Room1CSMon.Add(Aadya);
+         //Room1CSMon.Add(Krish);
          Room1CSMon.Add(Steve);
          Room1CSMon.Add(Vanessa);
+         Room1CSMon.Add(Om);
 
 
          
