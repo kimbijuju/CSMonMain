@@ -13,9 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool isMoving;
     private Vector2 input;
 
-    //for if touching grassLayer
-    public static bool touchingGrass;
-    
+   
     private void Start(){
     //Bijou work
         GetComponent<SpriteRenderer>().sprite=texterScript.tonySprite;
@@ -87,11 +85,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(transform.position, 0.2f, grassLayer) != null)
         {
-            touchingGrass=true;
-            
+            if (Random.Range(1, 101) <= 10)
+            {
+                spawnScript.spawnBattle(1,4, PokeList.Room1CSMon);
+                SceneManager.LoadScene("DemoBattleRoom");
+            }
         }
-        else
-            touchingGrass=false;
     }
 }
 
