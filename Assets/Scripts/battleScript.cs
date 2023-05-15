@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class battleScript : MonoBehaviour
 {
+    //if battle over or not
     
     // Start is called before the first frame update
     public Image playerHPBar;
@@ -69,6 +70,12 @@ public class battleScript : MonoBehaviour
 
     public int playerDmg;
     public int enemyDmg;
+    //effects
+    public bool pBurning;
+    public bool eBurning;
+
+    public bool pEffect;
+    public bool eEffect;
     
     void Start()
     {
@@ -86,7 +93,12 @@ public class battleScript : MonoBehaviour
 
         pStatus=new int[6];
         eStatus=new int[6];
+        
 
+        pBurning =false;
+        eBurning=false;
+        pEffect=false;
+        eEffect=false;
         buttonNum=1;
         //hiding buttons
         transCol=new Color(1,1,1,0f);
@@ -149,7 +161,7 @@ public class battleScript : MonoBehaviour
         
         
 
-        // Key for Status: [0,1,2,3,4,5]=[Byonguk Speed Buff, Andrew Speed Boost, Charging, Dmg reduc, Dmg Boost, Burning]
+        // Key for Status: [0,1,2,3,4,5, 6]=[Byonguk Speed Buff, Andrew Speed Boost, Charging, Dmg reduc, Dmg Boost, Burning]
         // Dmg reduc: if 1, 50% decrease. if 2, 100% decrease 
         // Charging: if 1, charged, if 0, uncharged
         
@@ -177,29 +189,56 @@ public class battleScript : MonoBehaviour
        if(textList.Count>0){
             texter.text=textList.Peek();
             if(texter.text=="What will you do?"){
+                
+
+
                 //End of round stuff
 
+                
 
-                //if anything importnat for last round stuff happened
-                if((playerDmg>0 && PokeList.ObtainedList[prevPlayerMon]==playerMon && (playerMon.refMon==PokeList.Nilesh || playerMon.refMon==PokeList.Daniel || playerMon.refMon==PokeList.Steve) )|| (enemyDmg>0 && PokeList.enemyList[prevEnemyMon]==enemyMon && (enemyMon.refMon==PokeList.Nilesh || enemyMon.refMon==PokeList.Daniel || enemyMon.refMon==PokeList.Steve)) || (playerDmg>0 && PokeList.enemyList[prevEnemyMon]==enemyMon && enemyMon.refMon==PokeList.Grace) || (enemyDmg>0 && PokeList.ObtainedList[prevPlayerMon]==playerMon && playerMon.refMon==PokeList.Grace)){
+
+                
+                //if player is burning
+                if(pBurning && pStatus[5]>0 && enemyDmg>0){
                     textList.Dequeue();
-                    //if player attacked last round
+                    textList.Enqueue(playerMon.refMon.name+" is suffering from their burns!");
+                    playerMon.currhp=playerMon.currhp-3*enemyDmg/10;
+                    pStatus[5]--;
+
+
+                    
+                    playerHPBar.rectTransform.sizeDelta= new Vector2(225*playerMon.currhp/playerMon.totalHp(), 25);
+                    
+                    textList.Enqueue("What will you do?");
+                    pBurning=false;
+                }
+                //if enemy is burning
+                else if(eBurning && playerDmg>0 && eStatus[5]>0){
+                    textList.Dequeue();
+                    textList.Enqueue(enemyMon.refMon.name+" is suffering from their burns!");
+                    enemyMon.currhp=enemyMon.currhp-3*playerDmg/10;
+                    eStatus[5]--;
+                    
+                    enemyHPBar.rectTransform.sizeDelta= new Vector2(225*enemyMon.currhp/enemyMon.totalHp(), 25);
+                    
+                    textList.Enqueue("What will you do?");
+                    eBurning=false;
+                }
+                //if player mon has some end of round effects
+                else if(pEffect){
+                    textList.Dequeue();
                     if(playerDmg>0){
+                        
                         if(PokeList.ObtainedList[prevPlayerMon].refMon==PokeList.Nilesh && playerMon.refMon==PokeList.Nilesh){
                         
                             textList.Enqueue("Nilesh suffered from recoil!");
+                            
                             playerMon.currhp*=7;
                             playerMon.currhp/=10;
                             
                         }
-
-                        if(enemyMon==PokeList.enemyList[prevEnemyMon] && enemyMon.refMon==PokeList.Grace){
-                            textList.Enqueue("Grace redirected some damage!");
-                            int damageTaken=playerDmg*3/10;
-                            playerMon.currhp-=damageTaken; 
-                        }
-
-                        if((PokeList.ObtainedList[prevPlayerMon].refMon==PokeList.Steve && playerMon.refMon==PokeList.Steve) || (PokeList.ObtainedList[prevPlayerMon].refMon==PokeList.Daniel && playerMon.refMon==PokeList.Daniel)){
+                       
+                        else if(((PokeList.ObtainedList[prevPlayerMon].refMon==PokeList.Steve && playerMon.refMon==PokeList.Steve) || (PokeList.ObtainedList[prevPlayerMon].refMon==PokeList.Daniel && playerMon.refMon==PokeList.Daniel)) && playerMon.currhp>0){
                             textList.Enqueue(playerMon.refMon.name+" healed up!");
                             int healAmount=playerDmg*7/10;
                             playerMon.currhp+=healAmount;
@@ -208,9 +247,33 @@ public class battleScript : MonoBehaviour
                             
                         }
                         
+                            
+                            
+                            
+                        
+                        
                     }
-                    //if enemy attacked last round
                     if(enemyDmg>0){
+                        if(playerMon==PokeList.ObtainedList[prevPlayerMon] && playerMon.refMon==PokeList.Grace){
+                            textList.Enqueue("Grace redirected some damage!");
+                            int damageTaken=enemyDmg*3/10;
+                            enemyMon.currhp-=damageTaken; 
+                        }
+                    }
+                    pEffect=false;
+                    textList.Enqueue("What will you do?");
+                    playerHPBar.rectTransform.sizeDelta= new Vector2(225*playerMon.currhp/playerMon.totalHp(), 25);
+                    enemyHPBar.rectTransform.sizeDelta= new Vector2(225*enemyMon.currhp/enemyMon.totalHp(), 25);
+                    
+
+                }
+                
+                
+                    //if enemy mon has some end of round effects
+                else if(eEffect==true){
+                    textList.Dequeue();
+                    if(enemyDmg>0){
+                        
                         if(enemyMon.refMon==PokeList.Nilesh && PokeList.enemyList[prevEnemyMon].refMon==PokeList.Nilesh){
                         
                             textList.Enqueue("Nilesh suffered from recoil!");
@@ -218,14 +281,8 @@ public class battleScript : MonoBehaviour
                             enemyMon.currhp/=10;
                             
                         }
-
-                        if(playerMon==PokeList.ObtainedList[prevPlayerMon] && playerMon.refMon==PokeList.Grace){
-                            textList.Enqueue("Grace redirected some damage!");
-                            int damageTaken=enemyDmg*3/10;
-                            enemyMon.currhp-=damageTaken; 
-                        }
-
-                        if((PokeList.enemyList[prevEnemyMon].refMon==PokeList.Steve && enemyMon.refMon==PokeList.Steve) || (PokeList.enemyList[prevEnemyMon].refMon==PokeList.Daniel && enemyMon.refMon==PokeList.Daniel)){
+                        
+                        else if(((PokeList.enemyList[prevEnemyMon].refMon==PokeList.Steve && enemyMon.refMon==PokeList.Steve) || (PokeList.enemyList[prevEnemyMon].refMon==PokeList.Daniel && enemyMon.refMon==PokeList.Daniel)) && enemyMon.currhp>0){
                             textList.Enqueue(enemyMon.refMon.name+" healed up!");
                             int healAmount=enemyDmg*7/10;
                             enemyMon.currhp+=healAmount;
@@ -233,26 +290,119 @@ public class battleScript : MonoBehaviour
                                 enemyMon.currhp=enemyMon.totalHp();
                             
                         }
+                        
                     }
-
-
-                    playerHPBar.rectTransform.sizeDelta= new Vector2(225*playerMon.currhp/playerMon.totalHp(), 25);
-                    enemyHPBar.rectTransform.sizeDelta= new Vector2(225*playerMon.currhp/playerMon.totalHp(), 25);
+                    if(playerDmg>0){
+                        if(enemyMon==PokeList.enemyList[prevEnemyMon] && enemyMon.refMon==PokeList.Grace){
+                            textList.Enqueue("Grace redirected some of "+playerMon.refMon.name+"'s damage!");
+                            int damageTaken=playerDmg*3/10;
+                            playerMon.currhp-=damageTaken; 
+                        }    
+                    }
+                    eEffect=false;
                     textList.Enqueue("What will you do?");
-                    playerDmg=0;
-                    enemyDmg=0;
-                }
-                
-                else if(playerMon.currhp<=0){
-                /*
-                    textList.Enqueue(playerMon.refMon.name+" fainted!");
-                    textList.Enqueue("Who will you swap to?");
-                    textList.Dequeue();
-                    */
+                    playerHPBar.rectTransform.sizeDelta= new Vector2(225*playerMon.currhp/playerMon.totalHp(), 25);
+                    enemyHPBar.rectTransform.sizeDelta= new Vector2(225*enemyMon.currhp/enemyMon.totalHp(), 25);
                     
                 }
                 
+                    
+                    
+                //if ally derrick can execute
+                else if(playerMon.refMon==PokeList.Derrick && enemyMon.currhp>0 && enemyMon.currhp*4<enemyMon.totalHp()){
+                    textList.Dequeue();
+                    textList.Enqueue("Derrick cleared the enemy"+enemyMon.refMon.name+"'s line!");
+                    textList.Enqueue("What will you do?");
+                    enemyMon.currhp=0;
+                    //enemyHPBar.rectTransform.sizeDelta= new Vector2(225*enemyMon.currhp/enemyMon.totalHp(), 25);
+                    texter.text=textList.Peek();
+
+                }  
+                //if enemy derrick can execute
+                else if(enemyMon.refMon==PokeList.Derrick && playerMon.currhp>0 && playerMon.currhp*4<playerMon.totalHp()){
+                    textList.Dequeue();
+                    textList.Enqueue("Derrick cleared your "+playerMon.refMon.name+"'s line!");
+                    textList.Enqueue("What will you do?");
+                    playerMon.currhp=0;
+                    //playerHPBar.rectTransform.sizeDelta= new Vector2(225*playerMon.currhp/playerMon.totalHp(), 25);
+                    texter.text=textList.Peek();
+
+                }   
+
+
+                    
+                    
+                    //if anyone dies after end of round
+                else if(playerMon.currhp<=0 || enemyMon.currhp<=0){
+                    textList.Dequeue();    
+                    //if enemy dies at end of round
+                    if(enemyMon.currhp<=0){
+                        textList.Enqueue("Their "+enemyMon.refMon.name+" fainted!");
+                        textList.Enqueue("Your team of CSMon gained XP!");
+                        //gaining exp
+                        for(int i=0; i<swapButtons.Length; i++){
+                            double xpGain=3.0* (enemyMon.lvl())/PokeList.ObtainedList[i].lvl();
+                            PokeList.ObtainedList[i].exp+=xpGain;
+                            if(PokeList.ObtainedList[i].exp>100)
+                                PokeList.ObtainedList[i].exp=100;
+                        }
+                                    
+                                    //no more enemies
+                                    
+                        if(PokeList.enemyList.Count<currEnemyMon+2){
+                                        //you win
+                            textList.Enqueue("You win this battle!");
+                            
+                                        
+                        }
+                                    //more enemies
+                        else{
+                            currEnemyMon++;
+                            textList.Enqueue("The enemy sent out "+PokeList.enemyList[currEnemyMon].refMon.name+"! ");
+                            
+                            
+                                
+                        }
+                    }
+                    // if player dies at end of round
+                    if(playerMon.currhp<=0){
+                        textList.Enqueue("Your "+playerMon.refMon.name+" fainted!");
+                                    
+                        bool anyLeft=false;
+                        for(int i=0; i<swapButtons.Length; i++){
+                            if(PokeList.ObtainedList[i].currhp>0){
+                                anyLeft=true;
+                            break;
+                            }
+                        }
+                                    
+                        if(anyLeft==true){
+                            textList.Enqueue("Who will you swap to?");
+                        }
+                        else{
+                            textList.Enqueue("You have no healthy CSMon left!");
+                                //you lose
+                            
+                            textList.Enqueue("You lose this battle!");
+                            
+                                        
+                                        
+                        }
+                    }
+                    texter.text=textList.Peek();
+
+                    
+                    
+                   
+                    
+                }
+               
+                
+                
+                
                 else{
+                    playerDmg=0;
+                    enemyDmg=0;
                     attackButton.GetComponent<SpriteRenderer>().color=showCol;
                     swapButton.GetComponent<SpriteRenderer>().color=showCol;
                     runButton.GetComponent<SpriteRenderer>().color=showCol;
@@ -300,63 +450,11 @@ public class battleScript : MonoBehaviour
                                     textList.Enqueue("Their "+enemyMon.refMon.name+" used "+enemyMon.refMon.attkName+"! ");
                                     enemyDmg=damage(enemyMon, playerMon, textList, eStatus, pStatus);
                                     playerMon.currhp-=enemyDmg;
-                                    //if enemyMon killed us after our turn
-                                    if(playerMon.currhp<=0){
-                                        textList.Enqueue("Your "+playerMon.refMon.name+" fainted!");
-                                    
-                                        bool anyLeft=false;
-                                        //checks to see if we have any csMon left
-                                        for(int i=0; i<swapButtons.Length; i++){
-                                            if(PokeList.ObtainedList[i].currhp>0){
-                                                anyLeft=true;
-                                                break;
-                                            }
-                                        }
-                                        
-                                    
-                                        if(anyLeft==true){
-                                            textList.Enqueue("Who will you swap to?");
-                                        }
-                                        else{
-                                            textList.Enqueue("You have no healthy CSMon left!");
-                                            textList.Enqueue("You lose this battle!");
-                                            
-                                            
-
-                                        }
-                                    }
-                                    else
-                                        textList.Enqueue("What will you do?");
-                                        
-
                                 }
-                                //enemy died before it could attack
-                                else{
-                                    textList.Enqueue("Their "+enemyMon.refMon.name+" fainted!");
-                                    textList.Enqueue("Your team of CSMon gained XP!");
-                                    //gaining exp
-                                    for(int i=0; i<swapButtons.Length; i++){
-                                        double xpGain=3.0* (enemyMon.lvl())/PokeList.ObtainedList[i].lvl();
-                                        PokeList.ObtainedList[i].exp+=xpGain;
-                                        if(PokeList.ObtainedList[i].exp>100)
-                                            PokeList.ObtainedList[i].exp=100;
-                                    }
                                     
-                                    //no more enemies
-                                    
-                                    if(PokeList.enemyList.Count<currEnemyMon+2){
-                                        textList.Enqueue("You win this battle!");
-                                        
-                                    }
-                                    //more enemies
-                                    else{
-                                        textList.Enqueue("The enemy sent out "+PokeList.enemyList[currEnemyMon+1].refMon.name+"! ");
-                                        textList.Enqueue("What will you do?");
-                                    }
-                                    
-                                }
                         
                             }
+                            //enemy attacks first
                             else{
                                 textList.Enqueue("Their "+enemyMon.refMon.name+" used "+enemyMon.refMon.attkName+"! ");
                                 enemyDmg=damage(enemyMon, playerMon, textList, eStatus, pStatus);
@@ -365,74 +463,11 @@ public class battleScript : MonoBehaviour
                                     textList.Enqueue("Your "+playerMon.refMon.name+" used "+playerMon.refMon.attkName+"! ");
                                     playerDmg=damage(playerMon, enemyMon, textList, pStatus, eStatus);
                                     enemyMon.currhp-=playerDmg;
-                                    //enemy died even though it went first
-                                    if(enemyMon.currhp<=0){
-                                        textList.Enqueue("Their "+enemyMon.refMon.name+" fainted!");
-                                        textList.Enqueue("Your team of CSMon gained XP!");
-                                        //gaining exp
-                                        
-                                        for(int i=0; i<swapButtons.Length; i++){
-                                            double xpGain=3.0* (enemyMon.lvl())/PokeList.ObtainedList[i].lvl();
-                                            PokeList.ObtainedList[i].exp+=xpGain;
-                                            if(PokeList.ObtainedList[i].exp>100)
-                                                PokeList.ObtainedList[i].exp=100;
-                                        }
-                                        
-                                        
-                                        //no more enemies
                                     
-                                        if(PokeList.enemyList.Count<currEnemyMon+2){
-                                            textList.Enqueue("You win this battle!");
-                                            
-                                        }
-                                        //more enemies
-                                        else{
-                                            textList.Enqueue("The enemy sent out "+PokeList.enemyList[currEnemyMon+1].refMon.name+"! ");
-                                            textList.Enqueue("What will you do?");
-                                        }
-                                    }
-                                    else
-                                        textList.Enqueue("What will you do?");
-                                }
-                                //ally died before it could attack
-                                else{
-                                    textList.Enqueue("Your "+playerMon.refMon.name+" fainted!");
-                                    
-                                    bool anyLeft=false;
-                                    for(int i=0; i<swapButtons.Length; i++){
-                                        if(PokeList.ObtainedList[i].currhp>0){
-                                            anyLeft=true;
-                                            break;
-                                        }
-                                    }
-                                    
-                                    if(anyLeft==true){
-                                        textList.Enqueue("Who will you swap to?");
-                                    }
-                                    else{
-                                        textList.Enqueue("You have no healthy CSMon left!");
-                                        textList.Enqueue("You lose this battle!");
-                                        
-                                        
-                                    }
                                 }
                             }
-                            //end of round stuff
-                            //if burning
-                            /*
-                            if(pStatus[5]>0){
-                                textList.Enqueue("Your "+playerMon.refMon.name+" is burning!");
-                                pStatus[5]--;
-                            }
-                            if(eStatus[5]>0){
-                                textList.Enqueue("Their "+enemyMon.refMon.name+" is burning!");
-                                eStatus[5]--;
-                            }
-                            */
 
-
-
-
+                            textList.Enqueue("What will you do?");
                             attackButton.GetComponent<SpriteRenderer>().color=transCol;
                             swapButton.GetComponent<SpriteRenderer>().color=transCol;
                             runButton.GetComponent<SpriteRenderer>().color=transCol;
@@ -441,6 +476,10 @@ public class battleScript : MonoBehaviour
                             //for end of round stuff
                             prevEnemyMon=currEnemyMon;
                             prevPlayerMon=currCSMon;
+                            pBurning = true;
+                            eBurning=true;
+                            pEffect=true;
+                            eEffect=true;
                     
                         }
                     }
@@ -525,22 +564,23 @@ public class battleScript : MonoBehaviour
                             pStatus[i]=0;
                         //prevhp makes updating health bars easier
                         prevhp=PokeList.ObtainedList[swapNum].currhp;
+                        //if not swapping out a dead csmon
                         if(playerMon.currhp>0){
                             textList.Enqueue("Their "+enemyMon.refMon.name+" used "+enemyMon.refMon.attkName+"! ");
                             enemyDmg=damage(enemyMon, PokeList.ObtainedList[swapNum], textList, eStatus, pStatus);
-                            
                             PokeList.ObtainedList[swapNum].currhp-=enemyDmg;
-                            if(PokeList.ObtainedList[swapNum].currhp<=0){
-                                textList.Enqueue("Your "+playerMon.refMon.name+" fainted!");
-                                textList.Enqueue("Who will you swap to?");
-                            }
+                            
                         }
-                        else
+                        
                             
                       
                         currCSMon=swapNum;
 
                         textList.Enqueue("What will you do?");
+                        pBurning = true;
+                        eBurning=true;
+                        pEffect=true;
+                        eEffect=true;
                     }  
                     foreach(GameObject i in swapButtons){
                         i.GetComponent<SpriteRenderer>().color=transCol;
@@ -581,7 +621,7 @@ public class battleScript : MonoBehaviour
                 
 
             }
-            
+            //trying to catch enemy
             else if(texter.text=="You used a CS'Ball!"){
                 if(Input.GetKeyDown("space")){
                     enemy.GetComponent<SpriteRenderer>().color=transCol;
@@ -590,6 +630,8 @@ public class battleScript : MonoBehaviour
                     if(chance>100.0*enemyMon.currhp/enemyMon.totalHp()){
                         textList.Enqueue("You caught "+enemyMon.refMon.name+"!");
 
+                        //you win
+                        
                         textList.Enqueue("You win this battle!");
                         PokeList.ObtainedList.Add(enemyMon);
 
@@ -599,34 +641,13 @@ public class battleScript : MonoBehaviour
                         textList.Enqueue(enemyMon.refMon.name+" broke free!");
                         textList.Enqueue("Their "+enemyMon.refMon.name+" used "+enemyMon.refMon.attkName+"! ");
                         enemyDmg=damage(enemyMon, playerMon, textList, eStatus, pStatus);
-                        playerMon.currhp-=enemyDmg;    
-                        PokeList.ObtainedList[swapNum].currhp-=enemyDmg;
-                        if(playerMon.currhp<=0){
-                            textList.Enqueue("Your "+playerMon.refMon.name+" fainted!");
-                            
-                                    
-                            bool anyLeft=false;
-                                        //checks to see if we have any csMon left
-                            for(int i=0; i<swapButtons.Length; i++){
-                                if(PokeList.ObtainedList[i].currhp>0){
-                                    anyLeft=true;
-                                    break;
-                                }
-                            }
-                                        
-                                    
-                            if(anyLeft==true){
-                                textList.Enqueue("Who will you swap to?");
-                            }
-                            else{
-                                textList.Enqueue("You have no healthy CSMon left!");
-                                textList.Enqueue("You lose this battle!");
-
-                            }
-                        }
-                        else{
-                            textList.Enqueue("What will you do?");
-                        }
+                        playerMon.currhp-=enemyDmg;  
+                        pBurning=true;
+                        eBurning=true;
+                        pEffect=true;
+                        eEffect=true;
+                        textList.Enqueue("What will you do?");
+                        
                     }
                 }
             }
@@ -646,39 +667,63 @@ public class battleScript : MonoBehaviour
                     
             }
             
-            //else if(texter.text=="Your "+playerMon.refMon.name+" is burning!")
-
             
+
+            //when player swaps out
             else if(texter.text==PokeList.ObtainedList[swapNum].refMon.name+", I choose you!"){
                 playerHPBar.rectTransform.sizeDelta= new Vector2(225*prevhp/playerMon.totalHp(), 25);
                 currCSMon=swapNum;
                 playerMon=PokeList.ObtainedList[currCSMon];
                 GetComponent<SpriteRenderer>().sprite=playerMon.refMon.look;
+               
+                for(int i=1; i<=5; i++)
+                    pStatus[i]=0;
             }
+            //when enemy swaps out
             else if(texter.text=="The enemy sent out "+PokeList.enemyList[currEnemyMon].refMon.name+"! "){
                 
-                currEnemyMon++;
+                
+                
                 enemyMon=PokeList.enemyList[currEnemyMon];
+                
                 enemy.GetComponent<SpriteRenderer>().sprite=enemyMon.refMon.look;
                 enemyHPBar.rectTransform.sizeDelta= new Vector2(225*enemyMon.currhp/enemyMon.totalHp(), 25);
-                for(int i=1; i<=5; i++)
-                    eStatus[i]=0;
+                if(Input.GetKeyDown("space")){
+                
+                    for(int i=1; i<=5; i++)
+                        eStatus[i]=0;
+                    
+                    textList.Enqueue("What will you do?");
+                }
 
             }
-            //leaving battle room
+            else if(texter.text=="Derrick cleared the enemy"+enemyMon.refMon.name+"'s line!"){
+                enemyHPBar.rectTransform.sizeDelta= new Vector2(225*enemyMon.currhp/enemyMon.totalHp(), 25);
+            }
+            else if(texter.text=="Derrick cleared your "+playerMon.refMon.name+"'s line!"){
+                playerHPBar.rectTransform.sizeDelta= new Vector2(225*playerMon.currhp/playerMon.totalHp(), 25);
+            }
+            //leaving the room
             else if(texter.text=="You lose this battle!"){
-                for(int i=0; i<swapNum; i++){
-                    PokeList.ObtainedList[i].currhp=PokeList.ObtainedList[i].totalHp();
+                
+                if(Input.GetKeyDown("space")){
+                    for(int i=0; i<swapButtons.Length; i++){
+                        PokeList.ObtainedList[i].currhp=PokeList.ObtainedList[i].totalHp();
+                    }
+                    texterScript.playerPos=new Vector2(11, 14);
+                    texterScript.currLvlScene="Level1Room";
+                    
+                    PokeList.enemyList= new List<PokeList.CSMon>();
+                    SceneManager.LoadScene(texterScript.currLvlScene);
                 }
-                texterScript.currLvlScene="Level1Room";
-                SceneManager.LoadScene(texterScript.currLvlScene);
             }
             else if(texter.text=="You win this battle!"){
-                PokeList.enemyList=new List<PokeList.CSMon>();
-                SceneManager.LoadScene(texterScript.currLvlScene);
-
-
+                if(Input.GetKeyDown("space")){
+                    PokeList.enemyList= new List<PokeList.CSMon>();
+                    SceneManager.LoadScene(texterScript.currLvlScene);
+                }
             }
+
 
            
             if(Input.GetKeyDown("space")){
@@ -714,82 +759,112 @@ public class battleScript : MonoBehaviour
             int dice=Random.Range(0, 101);
             if(d.refMon==PokeList.Ruthie)
                 dice*=2;
-            if(dice<a.refMon.acc){
-                res=a.refMon.attk*a.lvl();
-                t.Enqueue("It landed!");
-            //checks dmg change due to type advantage
-            
-                if((a.refMon.type=="Fire" && d.refMon.type=="Grass") || (a.refMon.type=="Grass" && d.refMon.type=="Water") || (a.refMon.type=="Water" && d.refMon.type=="Fire")){
-                    res*=3;
-                    res/=2;
-                    t.Enqueue("It was super effective!");
-                }
-                else if((a.refMon.type=="Fire" && d.refMon.type=="Water") || (a.refMon.type=="Grass" && d.refMon.type=="Fire") || (a.refMon.type=="Water" && d.refMon.type=="Grass")){
-                    res/=2;
-                    t.Enqueue("It wasn't very effective...");
-                }
-            //checks dmg change due to crit
-                dice=Random.Range(0, 101);
-                if(dice<a.refMon.critChance){
-                    if(a.refMon==PokeList.Mehki){
-                        res*=2;
-                        t.Enqueue("Critical Hit!");
+            if(a.refMon==PokeList.Krish){
+                if(dice<d.refMon.acc){
+                    res=d.refMon.attk*a.lvl();
+                    t.Enqueue("It landed!");
+                    if((a.refMon.type=="Fire" && d.refMon.type=="Grass") || (a.refMon.type=="Grass" && d.refMon.type=="Water") || (a.refMon.type=="Water" && d.refMon.type=="Fire")){
+                        res*=3;
+                        res/=2;
+                        t.Enqueue("It was super effective!");
                     }
-                    else if(a.refMon==PokeList.Bennet){
-                        t.Enqueue("Critical Hit!");
-                        t.Enqueue(d.refMon.name+ " got burnt!");
-                        e[5]+=3;
+                    else if((a.refMon.type=="Fire" && d.refMon.type=="Water") || (a.refMon.type=="Grass" && d.refMon.type=="Fire") || (a.refMon.type=="Water" && d.refMon.type=="Grass")){
+                        res/=2;
+                        t.Enqueue("It wasn't very effective...");
                     }
-                    else{
+                    dice=Random.Range(0, 101);
+                    if(dice<d.refMon.critChance){
                         res*=3;
                         res/=2;
                         t.Enqueue("Critical Hit!");
                     }
+                        
                 }
-                if(s[3]==1){
-                    s[3]=0;
-                    t.Enqueue(a.refMon.name+" was milk'd on, so "+a.refMon.name+" did less damage!");
-                    res/=2;
+                else{
+                    t.Enqueue("It missed!");
+                    return 0;
                 }
-                res*=(s[4]+1);
-            //checks to see damage change due to specific CSMon
-                
-                if(a.refMon==PokeList.Andrew && s[1]<4){
-                    t.Enqueue("Andrew is speeding up!");
-                    s[1]++;
-                }
-                else if(a.refMon==PokeList.Byeongguk){
-                    t.Enqueue("Byeongguk's whole team is speeding up!");
-                    s[0]++;
-                }
-                else if(a.refMon==PokeList.Steven)
-                    res*=(1+ (a.currhp)/a.totalHp());
-                else if(a.refMon==PokeList.Catherine && s[4]<4){
-                    s[4]++;
-                    t.Enqueue("Catherine's damage went up!");
-                }
-                else if(a.refMon==PokeList.Yunxin){
-                    
-                    e[3]=2;
-                }
-                else if(a.refMon==PokeList.Caleb){
-                    
-                    e[3]=1;
-                }
-                else if(a.refMon==PokeList.Peter || a.refMon==PokeList.Vanessa)
-                    e[2]=0;
+
+
             }
+            else{
+                if(dice<a.refMon.acc){
+                    res=a.refMon.attk*a.lvl();
+                    t.Enqueue("It landed!");
+                //checks dmg change due to type advantage
+            
+                    if((a.refMon.type=="Fire" && d.refMon.type=="Grass") || (a.refMon.type=="Grass" && d.refMon.type=="Water") || (a.refMon.type=="Water" && d.refMon.type=="Fire")){
+                        res*=3;
+                        res/=2;
+                        t.Enqueue("It was super effective!");
+                    }
+                    else if((a.refMon.type=="Fire" && d.refMon.type=="Water") || (a.refMon.type=="Grass" && d.refMon.type=="Fire") || (a.refMon.type=="Water" && d.refMon.type=="Grass")){
+                        res/=2;
+                        t.Enqueue("It wasn't very effective...");
+                    }
+                //checks dmg change due to crit
+                    dice=Random.Range(0, 101);
+                    if(dice<a.refMon.critChance){
+                        if(a.refMon==PokeList.Mehki){
+                            res*=2;
+                            t.Enqueue("Critical Hit!");
+                        }
+                        else if(a.refMon==PokeList.Bennet){
+                            t.Enqueue("Critical Hit!");
+                            t.Enqueue(d.refMon.name+ " got burnt!");
+                            e[5]+=3;
+                        }
+                        else{
+                            res*=3;
+                            res/=2;
+                            t.Enqueue("Critical Hit!");
+                        }
+                    }
+                    if(s[3]==1){
+                        s[3]=0;
+                        t.Enqueue(a.refMon.name+" was milk'd on, so "+a.refMon.name+" did less damage!");
+                        res/=2;
+                    }
+                    res*=(s[4]+1);
+                //checks to see damage change due to specific CSMon
                 
+                    if(a.refMon==PokeList.Andrew && s[1]<4){
+                        t.Enqueue("Andrew is speeding up!");
+                        s[1]++;
+                    }
+                    else if(a.refMon==PokeList.Byeongguk){
+                        t.Enqueue("Byeongguk's whole team is speeding up!");
+                        s[0]++;
+                    }
+                    else if(a.refMon==PokeList.Steven)
+                        res*=(1+ (a.currhp)/a.totalHp());
+                    else if(a.refMon==PokeList.Catherine && s[4]<4){
+                        s[4]++;
+                        t.Enqueue("Catherine's damage went up!");
+                    }
+                    else if(a.refMon==PokeList.Yunxin){
+                    
+                        e[3]=2;
+                    }
+                    else if(a.refMon==PokeList.Caleb){
+                    
+                        e[3]=1;
+                    }
+                    else if(a.refMon==PokeList.Peter || a.refMon==PokeList.Vanessa)
+                        e[2]=0;
+                }
+                else{
+                    t.Enqueue("It missed!");
+                    return 0;
+                }
+            }
 
         
                 
                 
             
             
-            else{
-                t.Enqueue("It missed!");
-                return 0;
-            }
+            
 
         }
         return res;
