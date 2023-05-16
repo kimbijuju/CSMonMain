@@ -169,19 +169,21 @@ MonoBehaviour:
   KrishSprite: {fileID: 21300000, guid: 8cf80460eb122694884a440d1897e874, type: 3}
   BijouSprite: {fileID: 21300000, guid: 1c9b44108df1e934796fe25671d22987, type: 3}
   PeterSprite: {fileID: 21300000, guid: b4a07f81a2ffdee45bdcfe8a9483ed4f, type: 3}
+
   GraceSprite: {fileID: 21300000, guid: c8b5247d1d786cc47aaf473f238c7235, type: 3}
-  OmSprite: {fileID: 0}
-  AadyaSprite: {fileID: 0}
-  BowenSprite: {fileID: 0}
-  MehkiSprite: {fileID: 0}
+
+  OmSprite: {fileID: 21300000, guid: e9206f16eb750804ebe5c38b79ec2728, type: 3}
+  AadyaSprite: {fileID: 21300000, guid: 692b5fd6822c24e4aaa5951f47b812b5, type: 3}
+  BowenSprite: {fileID: 21300000, guid: 3eda16040de6f1c4c829c7b1b4201559, type: 3}
+  MehkiSprite: {fileID: 21300000, guid: 91291aecb040df74ca6484079b04941c, type: 3}
   RuthieSprite: {fileID: 0}
   AbigailSprite: {fileID: 0}
   VishwaSprite: {fileID: 0}
   StevenSprite: {fileID: 0}
   JessicaSprite: {fileID: 0}
-  AndrewSprite: {fileID: 0}
-  BennetSprite: {fileID: 21300000, guid: e24b394268b3f4d42a6e01d13c4e3147, type: 3}
-  CalebSprite: {fileID: 0}
+  AndrewSprite: {fileID: 21300000, guid: 8603ada1100cc8f4abcc9887b6097ca3, type: 3}
+  BennetSprite: {fileID: 0}
+  CalebSprite: {fileID: 21300000, guid: edcfe047cda719e4db893f26afe4667d, type: 3}
 --- !u!4 &754844322
 Transform:
   m_ObjectHideFlags: 0
