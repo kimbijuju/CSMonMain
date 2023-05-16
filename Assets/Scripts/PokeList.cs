@@ -162,16 +162,16 @@ public class PokeList : MonoBehaviour
          Emily = new CSMonRef("Emily", 30, 50, 100, 95, 20, "Knitting Needle", "Grass", EmilySprite, "");
          Evan= new CSMonRef("Evan", 60, 40, 60, 90, 30, "Breast Stroke", "Water", EvanSprite, "");
          Grace= new CSMonRef("Grace", 120, 10, 10, 80, 10, "Bungee Gum", "Fire", GraceSprite, "Opponents take 30% of damage they deal to Grace onto themselves");
-         Krish=new CSMonRef("Krish", 80, 0, 0, 0, 0, "Copycat", "Grass", KrishSprite, "Uses the opponent's move, copying damage, crit chance, accuracy, and special effects");
+         Krish=new CSMonRef("Krish", 100, 0, 0, 0, 0, "Copycat", "Grass", KrishSprite, "Uses the opponent's move, copying damage, crit chance, and accuracy");
          Mehki= new CSMonRef("Mehki", 70, 40, 40, 90, 30, "Kicking Spree", "Fire", MehkiSprite, "When Kicking Spree crits, it deals x2 damage instead of x1.5");
          Minghan=new CSMonRef("Minghan", 60, 80, 30, 60, 20, "Rocket", "Fire", MinghanSprite, "");
-         Nilesh= new CSMonRef("Nilesh", 70, 80, 40, 70, 20, "Blazing Mustache", "Fire", NileshSprite, "If Blazing Mustache lands, Nilesh's HP is set to 70% its current amount");
+         Nilesh= new CSMonRef("Nilesh", 70, 60, 40, 70, 20, "Blazing Mustache", "Fire", NileshSprite, "If Blazing Mustache lands, Nilesh's HP is set to 70% its current amount");
          Om= new CSMonRef("Om", 40, 50, 90, 90, 20, "Omelette Strike", "Fire", OmSprite, "");
          Owen= new CSMonRef("Owen", 40, 60, 60, 80, 70, "Slap", "Water", OwenSprite, "");
          
          Peter= new CSMonRef("Peter", 100, 65, 25, 95, 20, "Snore", "Fire", PeterSprite, "Snore only does damage every 2nd usage");
          Ruthie= new CSMonRef("Ruthie", 40, 30, 70, 80, 20, "Hair Dew", "Water", RuthieSprite, "Opponent's accuracy is halved");
-         Steve= new CSMonRef("Steve", 120 , 110, 10, 10, 10, "Rizz", "Water", SteveSprite, "If Rizz lands, Steve heals for 50% of Rizz's damage");
+         Steve= new CSMonRef("Steve", 120 , 110, 10, 20, 10, "Rizz", "Water", SteveSprite, "If Rizz lands, Steve heals for 50% of Rizz's damage");
          Steven= new CSMonRef("Steven", 75, 35, 40, 80, 20, "Malicious Massage", "Grass", StevenSprite, "Malicious Massage does more damage the lower Steven's current hp is");
          Vanessa= new CSMonRef("Vanessa", 50, 100, 95, 95, 20, "Volleyball Set", "Water", VanessaSprite, "Volleyball Set only does damage every 2nd usage");
          Yunxin= new CSMonRef("Yunxin", 30, 40, 90, 65, 20, "Hack", "Legendary", YunxinSprite, "If Hack lands, the opponent's next attack will fail");
