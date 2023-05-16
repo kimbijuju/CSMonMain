@@ -20,7 +20,7 @@ public class Room2SpawnerScript : MonoBehaviour
         if(player.transform.position.x>44.4 && player.transform.position.y>14){
 
         
-           SceneManager.LoadScene("Level3Room");
+           SceneManager.LoadScene("Room10");
         } 
     }
 }

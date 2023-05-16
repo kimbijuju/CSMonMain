@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
    
     private void Start(){
     //Bijou work
-        GetComponent<SpriteRenderer>().sprite=texterScript.tonySprite;
+        //GetComponent<SpriteRenderer>().sprite=texterScript.tonySprite;
         transform.position=texterScript.playerPos;
         //
     }
