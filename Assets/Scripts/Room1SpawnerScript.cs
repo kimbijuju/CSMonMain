@@ -16,13 +16,8 @@ public class Room1SpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    /*
-        timer++;
-        if(timer>=600){
-            spawnScript.spawnBattle(1,4, PokeList.Room1CSMon);
-            //SceneManager.LoadScene("DemoBattleRoom");
-        }
-        */
+        
+        
         if(player.transform.position.x>41.44 && player.transform.position.y>14){
             texterScript.playerPos.x=-6f;
             texterScript.playerPos.y=-1f;
@@ -30,7 +25,12 @@ public class Room1SpawnerScript : MonoBehaviour
             SceneManager.LoadScene("Level2Room");
             
         }
-            
+         
+        if(PlayerController.spawnNow==true){
+            PlayerController.spawnNow=false;
+            spawnScript.spawnBattle(1,5, PokeList.Room1CSMon);
+            SceneManager.LoadScene("DemoBattleRoom");
+        }
 
     }
 }

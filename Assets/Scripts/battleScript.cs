@@ -424,6 +424,13 @@ public class battleScript : MonoBehaviour
                         attackButton.GetComponent<SpriteRenderer>().sprite=attackOff;
                         swapButton.GetComponent<SpriteRenderer>().sprite=swapOff;
                         itemButton.GetComponent<SpriteRenderer>().sprite=itemOff;
+                        if(Input.GetKeyDown("space")){
+                            textList.Enqueue("You ran away!");
+                            attackButton.GetComponent<SpriteRenderer>().color=transCol;
+                            swapButton.GetComponent<SpriteRenderer>().color=transCol;
+                            runButton.GetComponent<SpriteRenderer>().color=transCol;
+                            itemButton.GetComponent<SpriteRenderer>().color=transCol;
+                        }
                     }
                     //if attack button is selected
                     else if(buttonNum==1){
@@ -622,6 +629,13 @@ public class battleScript : MonoBehaviour
 
             }
             //trying to catch enemy
+            else if(texter.text=="You ran away!"){
+                if(Input.GetKeyDown("space")){
+                    PokeList.enemyList= new List<PokeList.CSMon>();
+                    SceneManager.LoadScene(texterScript.currLvlScene);
+                }
+            }
+
             else if(texter.text=="You used a CS'Ball!"){
                 if(Input.GetKeyDown("space")){
                     enemy.GetComponent<SpriteRenderer>().color=transCol;

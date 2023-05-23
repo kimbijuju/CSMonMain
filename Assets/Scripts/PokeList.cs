@@ -145,6 +145,7 @@ public class PokeList : MonoBehaviour
 
     //possible CSMon you can catch
     public static List<CSMonRef> Room1CSMon= new List<CSMonRef>();
+    public static List<CSMonRef> Room2CSMon= new List<CSMonRef>();
 
     // Update is called once per frame
     void Start()
@@ -181,12 +182,17 @@ public class PokeList : MonoBehaviour
          //Adding possible CSMon to list of wild CSMon
          Room1CSMon.Add(Derrick);
          Room1CSMon.Add(Aadya);
-         //Room1CSMon.Add(Krish);
+         
          Room1CSMon.Add(Steve);
          Room1CSMon.Add(Vanessa);
          Room1CSMon.Add(Om);
+         Room1CSMon.Add(Krish);
+         Room1CSMon.Add(Andrew);
 
-
+         Room2CSMon.Add(Caleb);
+         Room2CSMon.Add(Bennet);
+         Room2CSMon.Add(Daniel);
+         Room2CSMon.Add(Minghan);
          
 
     }

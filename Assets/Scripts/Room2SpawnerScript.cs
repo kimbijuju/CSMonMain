@@ -22,5 +22,10 @@ public class Room2SpawnerScript : MonoBehaviour
         
            SceneManager.LoadScene("Room10");
         } 
+        if(PlayerController.spawnNow==true){
+            PlayerController.spawnNow=false;
+            spawnScript.spawnBattle(6,10, PokeList.Room1CSMon);
+            SceneManager.LoadScene("DemoBattleRoom");
+        }
     }
 }

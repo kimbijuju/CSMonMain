@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
 
     private bool isMoving;
     private Vector2 input;
-   
+    
+    //checking if spawn time
+    public static bool spawnNow;
     private void Start(){
     //Bijou work
-        //GetComponent<SpriteRenderer>().sprite=texterScript.tonySprite;
+        GetComponent<SpriteRenderer>().sprite=texterScript.tonySprite;
         transform.position=texterScript.playerPos;
         //
     }
@@ -89,8 +91,8 @@ public class PlayerController : MonoBehaviour
         {
             if (Random.Range(1, 5001) <= 10)
             {
-                spawnScript.spawnBattle(1,5, PokeList.Room1CSMon);
-                SceneManager.LoadScene("DemoBattleRoom");
+                spawnNow=true;
+                
             }
         }
     }
