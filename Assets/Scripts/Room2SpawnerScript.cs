@@ -20,7 +20,10 @@ public class Room2SpawnerScript : MonoBehaviour
         if(player.transform.position.x>44.4 && player.transform.position.y>14){
 
         
-           SceneManager.LoadScene("Room10");
+            texterScript.playerPos.x=-6f;
+            texterScript.playerPos.y=-1f;
+            texterScript.currLvlScene="Level3Room";
+            SceneManager.LoadScene("Level3Room");
         } 
         if(PlayerController.spawnNow==true){
             PlayerController.spawnNow=false;
