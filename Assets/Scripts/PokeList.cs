@@ -175,6 +175,7 @@ public class PokeList : MonoBehaviour
          Steve= new CSMonRef("Steve", 120 , 110, 10, 20, 10, "Rizz", "Water", SteveSprite, "If Rizz lands, Steve heals for 50% of Rizz's damage");
          Steven= new CSMonRef("Steven", 75, 35, 40, 80, 20, "Malicious Massage", "Grass", StevenSprite, "Malicious Massage does more damage the lower Steven's current hp is");
          Vanessa= new CSMonRef("Vanessa", 50, 100, 95, 95, 20, "Volleyball Set", "Water", VanessaSprite, "Volleyball Set only does damage every 2nd usage");
+         Vishwa= new CSMonRef("Vishwa", 60, 40, 40, 90, 20, "Shave", "Grass", VishwaSprite, "Vishwa's speed increases the lower his hp is");
          Yunxin= new CSMonRef("Yunxin", 30, 40, 90, 65, 20, "Hack", "Legendary", YunxinSprite, "If Hack lands, the opponent's next attack will fail");
          
          
@@ -182,17 +183,20 @@ public class PokeList : MonoBehaviour
          //Adding possible CSMon to list of wild CSMon
          Room1CSMon.Add(Derrick);
          Room1CSMon.Add(Aadya);
-         
+         Room1CSMon.Add(Vishwa);
          Room1CSMon.Add(Steve);
          Room1CSMon.Add(Vanessa);
          Room1CSMon.Add(Om);
          Room1CSMon.Add(Krish);
          Room1CSMon.Add(Andrew);
+         Room1CSMon.Add(Steven);
 
          Room2CSMon.Add(Caleb);
          Room2CSMon.Add(Bennet);
          Room2CSMon.Add(Daniel);
          Room2CSMon.Add(Minghan);
+         Room2CSMon.Add(Owen);
+         Room2CSMon.Add(Emily);
          
 
     }

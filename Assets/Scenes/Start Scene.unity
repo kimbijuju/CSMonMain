@@ -1038,12 +1038,12 @@ MonoBehaviour:
   MehkiSprite: {fileID: 21300000, guid: 91291aecb040df74ca6484079b04941c, type: 3}
   RuthieSprite: {fileID: 0}
   AbigailSprite: {fileID: 0}
-  VishwaSprite: {fileID: 0}
-  StevenSprite: {fileID: 0}
+  VishwaSprite: {fileID: 21300000, guid: 449c36593f882dd40960bf324ea81e8c, type: 3}
+  StevenSprite: {fileID: 21300000, guid: 53b419953c1cd024fae0973e93e29450, type: 3}
   JessicaSprite: {fileID: 21300000, guid: b3e701b743e90f947802aa2a5ff20d33, type: 3}
   AndrewSprite: {fileID: 21300000, guid: 8603ada1100cc8f4abcc9887b6097ca3, type: 3}
   BennetSprite: {fileID: 21300000, guid: e24b394268b3f4d42a6e01d13c4e3147, type: 3}
-  CalebSprite: {fileID: 0}
+  CalebSprite: {fileID: 21300000, guid: edcfe047cda719e4db893f26afe4667d, type: 3}
 --- !u!4 &1591847269
 Transform:
   m_ObjectHideFlags: 0
