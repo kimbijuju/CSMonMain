@@ -27,6 +27,9 @@ public class csDexButtonScript : MonoBehaviour
         firstNum=0;
         secondNum=0;
         buttonSize=new Vector2(3.3f, 3.3f);
+        if(optionsScript.team==false){
+            rend.color=new Color(0,0,0,0);
+        }
         
     }
 
@@ -35,12 +38,13 @@ public class csDexButtonScript : MonoBehaviour
     {
         GetComponent<RectTransform>().localScale=buttonSize;
         //setting buttonNum
+        
         if(!swapping){
-            if(Input.GetKeyDown(KeyCode.W)){
+            if(Input.GetKeyDown(KeyCode.W) && optionsScript.team){
                 buttonNum--;
             }
 
-            if(Input.GetKeyDown(KeyCode.S)){
+            if(Input.GetKeyDown(KeyCode.S) && optionsScript.team){
                 buttonNum++;
             }
             if(buttonNum>1)
@@ -48,7 +52,7 @@ public class csDexButtonScript : MonoBehaviour
             else if(buttonNum<0)
                 buttonNum=1;
 
-            if(buttonNum==1){
+            if(buttonNum==1 && optionsScript.team){
                 rend.sprite=swapOn;
                 exitButton.GetComponent<SpriteRenderer>().sprite=exitOff;
                 if(Input.GetKeyDown("space")){

@@ -59,31 +59,31 @@ public class PokeScript : MonoBehaviour
     void Update()
     {
         //bars
-        maxhpBarRect.x=PokeList.ObtainedList[pokeNum].refMon.hp*1.5f;
+        maxhpBarRect.x=optionsScript.listOfMon[pokeNum].refMon.hp*1.5f;
         maxhpBar.rectTransform.sizeDelta=maxhpBarRect;
 
-        currhpBarRect.x=PokeList.ObtainedList[pokeNum].currhp/PokeList.ObtainedList[pokeNum].lvl()*1.5f;
+        currhpBarRect.x=optionsScript.listOfMon[pokeNum].currhp/optionsScript.listOfMon[pokeNum].lvl()*1.5f;
         currhpBar.rectTransform.sizeDelta=currhpBarRect;
 
-        attackBarRect.x=PokeList.ObtainedList[pokeNum].refMon.attk*1.5f;
+        attackBarRect.x=optionsScript.listOfMon[pokeNum].refMon.attk*1.5f;
         attackBar.rectTransform.sizeDelta=attackBarRect;
 
-        speedBarRect.x=PokeList.ObtainedList[pokeNum].refMon.speed*1.5f;
+        speedBarRect.x=optionsScript.listOfMon[pokeNum].refMon.speed*1.5f;
         speedBar.rectTransform.sizeDelta=speedBarRect;
 
-        accBarRect.x=PokeList.ObtainedList[pokeNum].refMon.acc*1.5f;
+        accBarRect.x=optionsScript.listOfMon[pokeNum].refMon.acc*1.5f;
         accBar.rectTransform.sizeDelta=accBarRect;
 
-        ccBarRect.x=PokeList.ObtainedList[pokeNum].refMon.critChance*1.5f;
+        ccBarRect.x=optionsScript.listOfMon[pokeNum].refMon.critChance*1.5f;
         ccBar.rectTransform.sizeDelta=ccBarRect;
 
         //text
-        rend.sprite=PokeList.ObtainedList[pokeNum].refMon.look;
-        pokeStats.text=PokeList.ObtainedList[pokeNum].printStats();
-        pokeHeader.text=PokeList.ObtainedList[pokeNum].printHeader();
-        numText.text= ""+(pokeNum+1)+"/"+PokeList.ObtainedList.Count;
+        rend.sprite=optionsScript.listOfMon[pokeNum].refMon.look;
+        pokeStats.text=optionsScript.listOfMon[pokeNum].printStats();
+        pokeHeader.text=optionsScript.listOfMon[pokeNum].printHeader();
+        numText.text= ""+(pokeNum+1)+"/"+optionsScript.listOfMon.Count;
 
-        if(pokeNum<=5)
+        if(pokeNum<=5 && optionsScript.team)
             background2.color=greenish;
         else
             background2.color=redish;
@@ -100,12 +100,12 @@ public class PokeScript : MonoBehaviour
             prevNum=pokeNum;
             pokeNum--;
         }
-        if(pokeNum>=PokeList.ObtainedList.Count){
+        if(pokeNum>=optionsScript.listOfMon.Count){
             pokeNum=0;
-            prevNum=PokeList.ObtainedList.Count-1;
+            prevNum=optionsScript.listOfMon.Count-1;
         }
         if(pokeNum<0){
-            pokeNum=PokeList.ObtainedList.Count-1;
+            pokeNum=optionsScript.listOfMon.Count-1;
             prevNum=0;
         }
         
