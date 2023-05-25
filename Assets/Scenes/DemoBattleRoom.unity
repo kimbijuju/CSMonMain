@@ -500,7 +500,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a7928c194eccc074686973ad10ff9240, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d9d974b65d5553449dff5b347db56c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -544,6 +544,8 @@ MonoBehaviour:
   enemy: {fileID: 1329258854}
   playerHeader: {fileID: 694297473}
   enemyHeader: {fileID: 1293836590}
+  prevPlayerMon: 0
+  prevEnemyMon: 0
   currCSMon: 0
   currEnemyMon: 0
   buttonNum: 0
@@ -577,6 +579,10 @@ MonoBehaviour:
   eStatus: 
   playerDmg: 0
   enemyDmg: 0
+  pBurning: 0
+  eBurning: 0
+  pEffect: 0
+  eEffect: 0
 --- !u!1 &234343274
 GameObject:
   m_ObjectHideFlags: 0
