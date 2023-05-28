@@ -143,6 +143,7 @@ public class PokeList : MonoBehaviour
     public static List<CSMon> enemyList= new List<CSMon>();
 
     public static List<CSMon> allList=new List<CSMon>();
+    public static List<CSMon> allEList=new List<CSMon>();
 
     //possible CSMon you can catch
     public static List<CSMonRef> Room1CSMon= new List<CSMonRef>();
@@ -200,33 +201,60 @@ public class PokeList : MonoBehaviour
          Room2CSMon.Add(Emily);
          
 
-         int lvl=1;
-         allList.Add(new PokeList.CSMon(lvl, "", Aadya.hp, Aadya));
-         allList.Add(new PokeList.CSMon(lvl, "", Abigail.hp, Abigail));
-         allList.Add(new PokeList.CSMon(lvl, "", Andrew.hp, Andrew));
-         allList.Add(new PokeList.CSMon(lvl, "", Bennet.hp, Bennet));
-         allList.Add(new PokeList.CSMon(lvl, "", Bijou.hp, Bijou));
-         allList.Add(new PokeList.CSMon(lvl, "", Byeongguk.hp, Byeongguk));
-         allList.Add(new PokeList.CSMon(lvl, "", Caleb.hp, Caleb));
-         allList.Add(new PokeList.CSMon(lvl, "", Catherine.hp, Catherine));
-         allList.Add(new PokeList.CSMon(lvl, "", Daniel.hp, Daniel));
-         allList.Add(new PokeList.CSMon(lvl, "", Derrick.hp, Derrick));
-         allList.Add(new PokeList.CSMon(lvl, "", Emily.hp, Emily));
-         allList.Add(new PokeList.CSMon(lvl, "", Evan.hp, Evan));
-         allList.Add(new PokeList.CSMon(lvl, "", Grace.hp, Grace));
-         allList.Add(new PokeList.CSMon(lvl, "", Krish.hp, Krish));
-         allList.Add(new PokeList.CSMon(lvl, "", Mehki.hp, Mehki));
-         allList.Add(new PokeList.CSMon(lvl, "", Minghan.hp, Minghan));
-         allList.Add(new PokeList.CSMon(lvl, "", Nilesh.hp, Nilesh));
-         allList.Add(new PokeList.CSMon(lvl, "", Om.hp, Om));
-         allList.Add(new PokeList.CSMon(lvl, "", Owen.hp, Owen));
-         allList.Add(new PokeList.CSMon(lvl, "", Peter.hp, Peter));
-         allList.Add(new PokeList.CSMon(lvl, "", Ruthie.hp, Ruthie));
-         allList.Add(new PokeList.CSMon(lvl, "", Steven.hp, Steven));
-         allList.Add(new PokeList.CSMon(lvl, "", Steve.hp, Steve));
-         allList.Add(new PokeList.CSMon(lvl, "", Vanessa.hp, Vanessa));
-         allList.Add(new PokeList.CSMon(lvl, "", Vishwa.hp, Vishwa));
-         allList.Add(new PokeList.CSMon(lvl, "", Yunxin.hp, Yunxin));
+         int lvl=100;
+         allList.Add(new PokeList.CSMon(lvl, "", Aadya.hp*100, Aadya));
+         allList.Add(new PokeList.CSMon(lvl, "", Abigail.hp*100, Abigail));
+         allList.Add(new PokeList.CSMon(lvl, "", Andrew.hp*100, Andrew));
+         allList.Add(new PokeList.CSMon(lvl, "", Bennet.hp*100, Bennet));
+         allList.Add(new PokeList.CSMon(lvl, "", Bijou.hp*100, Bijou));
+         allList.Add(new PokeList.CSMon(lvl, "", Byeongguk.hp*100, Byeongguk));
+         allList.Add(new PokeList.CSMon(lvl, "", Caleb.hp*100, Caleb));
+         allList.Add(new PokeList.CSMon(lvl, "", Catherine.hp*100, Catherine));
+         allList.Add(new PokeList.CSMon(lvl, "", Daniel.hp*100, Daniel));
+         allList.Add(new PokeList.CSMon(lvl, "", Derrick.hp*100, Derrick));
+         allList.Add(new PokeList.CSMon(lvl, "", Emily.hp*100, Emily));
+         allList.Add(new PokeList.CSMon(lvl, "", Evan.hp*100, Evan));
+         allList.Add(new PokeList.CSMon(lvl, "", Grace.hp*100, Grace));
+         allList.Add(new PokeList.CSMon(lvl, "", Krish.hp*100, Krish));
+         allList.Add(new PokeList.CSMon(lvl, "", Mehki.hp*100, Mehki));
+         allList.Add(new PokeList.CSMon(lvl, "", Minghan.hp*100, Minghan));
+         allList.Add(new PokeList.CSMon(lvl, "", Nilesh.hp*100, Nilesh));
+         allList.Add(new PokeList.CSMon(lvl, "", Om.hp*100, Om));
+         allList.Add(new PokeList.CSMon(lvl, "", Owen.hp*100, Owen));
+         allList.Add(new PokeList.CSMon(lvl, "", Peter.hp*100, Peter));
+         allList.Add(new PokeList.CSMon(lvl, "", Ruthie.hp*100, Ruthie));
+         allList.Add(new PokeList.CSMon(lvl, "", Steven.hp*100, Steven));
+         allList.Add(new PokeList.CSMon(lvl, "", Steve.hp*100, Steve));
+         allList.Add(new PokeList.CSMon(lvl, "", Vanessa.hp*100, Vanessa));
+         allList.Add(new PokeList.CSMon(lvl, "", Vishwa.hp*100, Vishwa));
+         allList.Add(new PokeList.CSMon(lvl, "", Yunxin.hp*100, Yunxin));
 
+         allEList.Add(new PokeList.CSMon(lvl, "", Aadya.hp*100, Aadya));
+         allEList.Add(new PokeList.CSMon(lvl, "", Abigail.hp*100, Abigail));
+         allEList.Add(new PokeList.CSMon(lvl, "", Andrew.hp*100, Andrew));
+         allEList.Add(new PokeList.CSMon(lvl, "", Bennet.hp*100, Bennet));
+         allEList.Add(new PokeList.CSMon(lvl, "", Bijou.hp*100, Bijou));
+         allEList.Add(new PokeList.CSMon(lvl, "", Byeongguk.hp*100, Byeongguk));
+         allEList.Add(new PokeList.CSMon(lvl, "", Caleb.hp*100, Caleb));
+         allEList.Add(new PokeList.CSMon(lvl, "", Catherine.hp*100, Catherine));
+         allEList.Add(new PokeList.CSMon(lvl, "", Daniel.hp*100, Daniel));
+         allEList.Add(new PokeList.CSMon(lvl, "", Derrick.hp*100, Derrick));
+         allEList.Add(new PokeList.CSMon(lvl, "", Emily.hp*100, Emily));
+         allEList.Add(new PokeList.CSMon(lvl, "", Evan.hp*100, Evan));
+         allEList.Add(new PokeList.CSMon(lvl, "", Grace.hp*100, Grace));
+         allEList.Add(new PokeList.CSMon(lvl, "", Krish.hp*100, Krish));
+         allEList.Add(new PokeList.CSMon(lvl, "", Mehki.hp*100, Mehki));
+         allEList.Add(new PokeList.CSMon(lvl, "", Minghan.hp*100, Minghan));
+         allEList.Add(new PokeList.CSMon(lvl, "", Nilesh.hp*100, Nilesh));
+         allEList.Add(new PokeList.CSMon(lvl, "", Om.hp*100, Om));
+         allEList.Add(new PokeList.CSMon(lvl, "", Owen.hp*100, Owen));
+         allEList.Add(new PokeList.CSMon(lvl, "", Peter.hp*100, Peter));
+         allEList.Add(new PokeList.CSMon(lvl, "", Ruthie.hp*100, Ruthie));
+         allEList.Add(new PokeList.CSMon(lvl, "", Steven.hp*100, Steven));
+         allEList.Add(new PokeList.CSMon(lvl, "", Steve.hp*100, Steve));
+         allEList.Add(new PokeList.CSMon(lvl, "", Vanessa.hp*100, Vanessa));
+         allEList.Add(new PokeList.CSMon(lvl, "", Vishwa.hp*100, Vishwa));
+         allEList.Add(new PokeList.CSMon(lvl, "", Yunxin.hp*100, Yunxin));
+         
     }
 }

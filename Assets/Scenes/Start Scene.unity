@@ -274,7 +274,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &435708965
 GameObject:
@@ -358,7 +358,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471221855
 GameObject:
@@ -522,7 +522,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &780582975
 GameObject:
@@ -739,7 +739,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1289999247
 GameObject:
@@ -899,7 +899,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508072516
 GameObject:
@@ -984,80 +984,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1591847267
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1591847269}
-  - component: {fileID: 1591847268}
-  m_Layer: 0
-  m_Name: PokeList
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1591847268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591847267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f5cf2b11b7f264eacd577fbb57ece9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CathySprite: {fileID: 21300000, guid: a7928c194eccc074686973ad10ff9240, type: 3}
-  EvanSprite: {fileID: 21300000, guid: 2d62ae0fc40af99458ad7aa030bd5d46, type: 3}
-  EmilySprite: {fileID: 21300000, guid: ac05e3d0ea4313d49a1cd5d3f6865c53, type: 3}
-  NileshSprite: {fileID: 21300000, guid: c309fdf6e645f0b40b5649d697bbe16b, type: 3}
-  OwenSprite: {fileID: 21300000, guid: f18b829d2d245004dbcb094c69b009ea, type: 3}
-  SteveSprite: {fileID: 21300000, guid: 2a48f35c0783c744f91dbb9bfda9d4d5, type: 3}
-  MinghanSprite: {fileID: 21300000, guid: 2a05a40f3d771724f855ec386cdb51a0, type: 3}
-  IzzieSprite: {fileID: 21300000, guid: 6d9d974b65d5553449dff5b347db56c0, type: 3}
-  NancySprite: {fileID: 21300000, guid: 4f971e69586c25a4abec3c70f326a3dc, type: 3}
-  VanessaSprite: {fileID: 21300000, guid: 0b6200a8b5e6f6744ab1fb9ee6aca615, type: 3}
-  DerrickSprite: {fileID: 21300000, guid: 2c77dbe97c6f1424692da0ce1f9e3246, type: 3}
-  ByeonggukSprite: {fileID: 21300000, guid: 490c982387194f447933497a1e209124, type: 3}
-  DanielSprite: {fileID: 21300000, guid: 9f80fe11cd709284dae0e5f4c26380d7, type: 3}
-  YunxinSprite: {fileID: 21300000, guid: de149d96815789740bdefaa2b3540454, type: 3}
-  KrishSprite: {fileID: 21300000, guid: 8cf80460eb122694884a440d1897e874, type: 3}
-  BijouSprite: {fileID: 21300000, guid: 1c9b44108df1e934796fe25671d22987, type: 3}
-  PeterSprite: {fileID: 21300000, guid: b4a07f81a2ffdee45bdcfe8a9483ed4f, type: 3}
-  GraceSprite: {fileID: 21300000, guid: c8b5247d1d786cc47aaf473f238c7235, type: 3}
-  OmSprite: {fileID: 21300000, guid: e9206f16eb750804ebe5c38b79ec2728, type: 3}
-  AadyaSprite: {fileID: 21300000, guid: 692b5fd6822c24e4aaa5951f47b812b5, type: 3}
-  BowenSprite: {fileID: 21300000, guid: 0955d88b8d1e734479f0ee661bfaf758, type: 3}
-  MehkiSprite: {fileID: 21300000, guid: 91291aecb040df74ca6484079b04941c, type: 3}
-  RuthieSprite: {fileID: 0}
-  AbigailSprite: {fileID: 21300000, guid: a5933b5bdb4672e4382fe9cf2df42070, type: 3}
-  VishwaSprite: {fileID: 21300000, guid: 1d09cdf5cc4324944aace767070cd40a, type: 3}
-  StevenSprite: {fileID: 21300000, guid: 25d51d47d2d3c59429f8ab5f522af34f, type: 3}
-  JessicaSprite: {fileID: 21300000, guid: b3e701b743e90f947802aa2a5ff20d33, type: 3}
-  AndrewSprite: {fileID: 21300000, guid: 8603ada1100cc8f4abcc9887b6097ca3, type: 3}
-  BennetSprite: {fileID: 21300000, guid: e24b394268b3f4d42a6e01d13c4e3147, type: 3}
-  CalebSprite: {fileID: 21300000, guid: edcfe047cda719e4db893f26afe4667d, type: 3}
---- !u!4 &1591847269
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591847267}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3261766, y: 0.90476394, z: 0.25765702}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1883709984
 GameObject:
@@ -1245,7 +1171,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2020825915
 GameObject:

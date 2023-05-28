@@ -57,7 +57,7 @@ public class csDexButtonScript : MonoBehaviour
                 exitButton.GetComponent<SpriteRenderer>().sprite=exitOff;
                 if(Input.GetKeyDown("space")){
                     firstNum=PokeScript.pokeNum;
-                    rend.sprite=PokeList.ObtainedList[firstNum].refMon.look;
+                    rend.sprite=optionsScript.listOfMon[firstNum].refMon.look;
                     swapping=true;
                     buttonSize.x=0.5f;
                     buttonSize.y=0.5f;
@@ -75,9 +75,9 @@ public class csDexButtonScript : MonoBehaviour
         else{
             if(Input.GetKeyDown("space")){
                 secondNum=PokeScript.pokeNum;
-                tempMon=PokeList.ObtainedList[secondNum];
-                PokeList.ObtainedList[secondNum]=PokeList.ObtainedList[firstNum];
-                PokeList.ObtainedList[firstNum]=tempMon;
+                tempMon=optionsScript.listOfMon[secondNum];
+                optionsScript.listOfMon[secondNum]=optionsScript.listOfMon[firstNum];
+                optionsScript.listOfMon[firstNum]=tempMon;
                 swapping=false;
                 buttonSize.x=3.3f;
                 buttonSize.y=3.3f;

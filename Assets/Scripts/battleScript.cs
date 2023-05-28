@@ -513,17 +513,18 @@ public class battleScript : MonoBehaviour
                         swapButton.GetComponent<SpriteRenderer>().sprite=swapOff;
                         itemButton.GetComponent<SpriteRenderer>().sprite=itemOn;
                         if(Input.GetKeyDown("space")){
-
+                            attackButton.GetComponent<SpriteRenderer>().color=transCol;
+                            swapButton.GetComponent<SpriteRenderer>().color=transCol;
+                            runButton.GetComponent<SpriteRenderer>().color=transCol;
+                            itemButton.GetComponent<SpriteRenderer>().color=transCol;
                             if(PokeList.enemyList.Count>1){
                                 textList.Enqueue("You can't catch this CS'Mon!");
+                                textList.Enqueue("What will you do?");
                             }
                             else{
                                 textList.Enqueue("You used a CS'Ball!");
                                 textList.Enqueue("*Roll*Roll*Roll...");
-                                attackButton.GetComponent<SpriteRenderer>().color=transCol;
-                                swapButton.GetComponent<SpriteRenderer>().color=transCol;
-                                runButton.GetComponent<SpriteRenderer>().color=transCol;
-                                itemButton.GetComponent<SpriteRenderer>().color=transCol;
+                                
                             }
                             
                         }
