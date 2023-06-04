@@ -32,6 +32,9 @@ public class texterScript : MonoBehaviour
 
     //curr room
     public static string currLvlScene;
+    //starter
+    public static string starterString;
+
     
     // Start is called before the first frame update
     void Start()
@@ -123,6 +126,7 @@ public class texterScript : MonoBehaviour
                 if(buttonNum==0){
                     selectSquare.transform.position=NileshButton.transform.position;
                     if(Input.GetKeyDown("space")){
+                        starterString="Nilesh";
                         PokeList.ObtainedList.Add(new PokeList.CSMon(5, "", (PokeList.Nilesh.hp)*5, PokeList.Nilesh));
                         Hong.GetComponent<SpriteRenderer>().color=showCol;
                         NileshButton.GetComponent<SpriteRenderer>().color=transCol;
@@ -137,6 +141,7 @@ public class texterScript : MonoBehaviour
                 else if(buttonNum==1){
                     selectSquare.transform.position=BijouButton.transform.position;
                     if(Input.GetKeyDown("space")){
+                        starterString="Bijou";
                         PokeList.ObtainedList.Add(new PokeList.CSMon(5, "", (PokeList.Bijou.hp)*5, PokeList.Bijou));
                         Hong.GetComponent<SpriteRenderer>().color=showCol;
                         NileshButton.GetComponent<SpriteRenderer>().color=transCol;
@@ -150,6 +155,7 @@ public class texterScript : MonoBehaviour
                 else if(buttonNum==2){
                     selectSquare.transform.position=EvanButton.transform.position;
                     if(Input.GetKeyDown("space")){
+                        starterString="Evan";
                         PokeList.ObtainedList.Add(new PokeList.CSMon(5, "", (PokeList.Evan.hp)*5, PokeList.Evan));
                         Hong.GetComponent<SpriteRenderer>().color=showCol;
                         NileshButton.GetComponent<SpriteRenderer>().color=transCol;

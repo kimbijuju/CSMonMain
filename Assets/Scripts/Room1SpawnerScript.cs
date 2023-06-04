@@ -28,7 +28,7 @@ public class Room1SpawnerScript : MonoBehaviour
          
         if(PlayerController.spawnNow==true){
             PlayerController.spawnNow=false;
-            spawnScript.spawnBattle(1,5, PokeList.Room1CSMon);
+            spawnScript.spawnBattle(3,7, PokeList.Room1CSMon);
             SceneManager.LoadScene("DemoBattleRoom");
         }
 
