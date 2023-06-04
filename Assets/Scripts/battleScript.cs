@@ -425,11 +425,17 @@ public class battleScript : MonoBehaviour
                         swapButton.GetComponent<SpriteRenderer>().sprite=swapOff;
                         itemButton.GetComponent<SpriteRenderer>().sprite=itemOff;
                         if(Input.GetKeyDown("space")){
-                            textList.Enqueue("You ran away!");
+                            
                             attackButton.GetComponent<SpriteRenderer>().color=transCol;
                             swapButton.GetComponent<SpriteRenderer>().color=transCol;
                             runButton.GetComponent<SpriteRenderer>().color=transCol;
                             itemButton.GetComponent<SpriteRenderer>().color=transCol;
+                            if(PokeList.enemyList.Count>1){
+                                textList.Enqueue("You can't run away!");
+                                textList.Enqueue("What will you do?");
+                            }
+                            else
+                                textList.Enqueue("You ran away!");
                         }
                     }
                     //if attack button is selected

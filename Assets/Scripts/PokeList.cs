@@ -37,8 +37,11 @@ public class PokeList : MonoBehaviour
     public Sprite BennetSprite;
     public Sprite CalebSprite;
     
-    public Sprite RobertSprite;
 
+    public Sprite RobertSprite;
+    public Sprite TateSprite;
+    public Sprite YangSprite;
+    public Sprite DoranSprite;
     
     
     //CSMon references
@@ -73,7 +76,10 @@ public class PokeList : MonoBehaviour
     public static CSMonRef Mehki;
     public static CSMonRef Izzie;
     
-    public static CSMonRef Robert; 
+    public static CSMonRef Robert;
+    public static CSMonRef Tate; 
+    public static CSMonRef Doran; 
+    public static CSMonRef Yang; 
     
 
 
@@ -158,6 +164,7 @@ public class PokeList : MonoBehaviour
          Andrew= new CSMonRef("Andrew", 50, 60, 30, 80, 20, "Senior Blitz", "Fire", AndrewSprite, "Each time Senior Blitz lands, Andrew's speed doubles, capping at x8");
          Bennet= new CSMonRef("Bennet", 70, 30, 60, 90, 40, "Smoulder", "Fire", BennetSprite, "When Smoulder crits, it instead burns the target for the next 3 turns");
          Bijou= new CSMonRef("Bijou", 60, 30, 90, 85, 30, "Oppa", "Grass", BijouSprite, "");
+         Bowen= new CSMonRef("Bowen", 70, 20, 80, 90, 20, "Rock Sweep", "Water", BowenSprite, "");
          Byeongguk= new CSMonRef("Byeongguk", 60, 15, 30, 40, 20, "Teaching Assistant", "Legendary", ByeonggukSprite, "Each time Teaching Assistant lands, Byeongguk's team's speed increases");
          Caleb= new CSMonRef("Caleb", 80, 30, 40, 70, 20, "Milky Water", "Water", CalebSprite, "If Milky Water lands, the opponent's next attack will do 50% damage");
          Catherine = new CSMonRef("Catherine", 65, 20, 85, 80, 10, "Osu Combo", "Legendary", CathySprite, "Each time Osu Combo lands, Catherine's next Osu Combo does x2 damage, capping at x8");
@@ -166,13 +173,15 @@ public class PokeList : MonoBehaviour
          Emily = new CSMonRef("Emily", 30, 50, 100, 95, 20, "Knitting Needle", "Grass", EmilySprite, "");
          Evan= new CSMonRef("Evan", 70, 40, 60, 90, 30, "Breast Stroke", "Water", EvanSprite, "");
          Grace= new CSMonRef("Grace", 120, 10, 10, 80, 10, "Bungee Gum", "Fire", GraceSprite, "Opponents take 30% of damage they deal to Grace onto themselves");
+         Izzie= new CSMonRef("Izzie", 50, 40, 80, 90, 30, "Sail Slash", "Water", IzzieSprite, "");
+         Jessica= new CSMonRef("Jessica", 40, 80, 30, 80, 20, "Hollow Knight", "Grass", JessicaSprite, "");
          Krish=new CSMonRef("Krish", 100, 0, 0, 0, 0, "Copycat", "Grass", KrishSprite, "Uses the opponent's move, copying damage, crit chance, and accuracy");
          Mehki= new CSMonRef("Mehki", 70, 40, 40, 90, 30, "Kicking Spree", "Fire", MehkiSprite, "When Kicking Spree crits, it deals x2 damage instead of x1.5");
-         Minghan=new CSMonRef("Minghan", 60, 80, 30, 60, 20, "Rocket", "Fire", MinghanSprite, "");
+         Minghan=new CSMonRef("Minghan", 60, 70, 30, 60, 20, "Rocket", "Fire", MinghanSprite, "");
+         Nancy=new CSMonRef("Nancy", 90, 30, 20, 60, 50, "Pitch Slap", "Water", NancySprite, "");
          Nilesh= new CSMonRef("Nilesh", 100, 40, 40, 70, 20, "Blazing Mustache", "Fire", NileshSprite, "If Blazing Mustache lands, Nilesh's HP is set to 70% its current amount");
          Om= new CSMonRef("Om", 40, 50, 90, 90, 20, "Omelette Strike", "Fire", OmSprite, "");
-         Owen= new CSMonRef("Owen", 40, 60, 60, 80, 70, "Slap", "Water", OwenSprite, "");
-         
+         Owen= new CSMonRef("Owen", 40, 60, 60, 80, 70, "Slap", "Water", OwenSprite, "");   
          Peter= new CSMonRef("Peter", 100, 65, 25, 95, 20, "Snore", "Fire", PeterSprite, "Snore only does damage every 2nd usage");
          Ruthie= new CSMonRef("Ruthie", 40, 30, 70, 80, 20, "Hair Dew", "Water", RuthieSprite, "Opponent's accuracy is halved");
          Steve= new CSMonRef("Steve", 140 , 110, 10, 20, 10, "Rizz", "Water", SteveSprite, "If Rizz lands, Steve heals for 50% of Rizz's damage");
@@ -182,7 +191,10 @@ public class PokeList : MonoBehaviour
          Yunxin= new CSMonRef("Yunxin", 30, 40, 90, 65, 20, "Hack", "Legendary", YunxinSprite, "If Hack lands, the opponent's next attack will fail");
          
 
-         Robert= new CSMonRef("Robert", 90, 50, 10, 70, 20, "Block", "Legendary", RobertSprite, "") ;
+         Robert= new CSMonRef("Robert", 90, 50, 10, 70, 20, "Block", "Legendary", RobertSprite, "");
+         Doran= new CSMonRef("Doran", 60, 50, 50, 70, 20, "Lazer", "Fire", DoranSprite, "");
+         Tate= new CSMonRef("Tate", 60, 50, 50, 70, 20, "Calculus", "Water", DoranSprite, "");
+         Yang= new CSMonRef("Yang", 30, 70, 80, 70, 20, "CTCI", "Legendary", YangSprite, "");
          
          
          //Adding possible CSMon to list of wild CSMon
@@ -210,6 +222,7 @@ public class PokeList : MonoBehaviour
          allList.Add(new PokeList.CSMon(lvl, "", Andrew.hp*100, Andrew));
          allList.Add(new PokeList.CSMon(lvl, "", Bennet.hp*100, Bennet));
          allList.Add(new PokeList.CSMon(lvl, "", Bijou.hp*100, Bijou));
+         allList.Add(new PokeList.CSMon(lvl, "", Bowen.hp*100, Bowen));
          allList.Add(new PokeList.CSMon(lvl, "", Byeongguk.hp*100, Byeongguk));
          allList.Add(new PokeList.CSMon(lvl, "", Caleb.hp*100, Caleb));
          allList.Add(new PokeList.CSMon(lvl, "", Catherine.hp*100, Catherine));
@@ -218,10 +231,13 @@ public class PokeList : MonoBehaviour
          allList.Add(new PokeList.CSMon(lvl, "", Emily.hp*100, Emily));
          allList.Add(new PokeList.CSMon(lvl, "", Evan.hp*100, Evan));
          allList.Add(new PokeList.CSMon(lvl, "", Grace.hp*100, Grace));
+         allList.Add(new PokeList.CSMon(lvl, "", Izzie.hp*100, Izzie));
+         allList.Add(new PokeList.CSMon(lvl, "", Jessica.hp*100, Jessica));
          allList.Add(new PokeList.CSMon(lvl, "", Krish.hp*100, Krish));
          allList.Add(new PokeList.CSMon(lvl, "", Mehki.hp*100, Mehki));
          allList.Add(new PokeList.CSMon(lvl, "", Minghan.hp*100, Minghan));
-         allList.Add(new PokeList.CSMon(lvl, "", Nilesh.hp*100, Nilesh));
+         allList.Add(new PokeList.CSMon(lvl, "", Nancy.hp*100, Nancy));
+         allList.Add(new PokeList.CSMon(lvl, "", Nilesh.hp*100, Nilesh));         
          allList.Add(new PokeList.CSMon(lvl, "", Om.hp*100, Om));
          allList.Add(new PokeList.CSMon(lvl, "", Owen.hp*100, Owen));
          allList.Add(new PokeList.CSMon(lvl, "", Peter.hp*100, Peter));
@@ -232,11 +248,14 @@ public class PokeList : MonoBehaviour
          allList.Add(new PokeList.CSMon(lvl, "", Vishwa.hp*100, Vishwa));
          allList.Add(new PokeList.CSMon(lvl, "", Yunxin.hp*100, Yunxin));
 
+
+
          allEList.Add(new PokeList.CSMon(lvl, "", Aadya.hp*100, Aadya));
          allEList.Add(new PokeList.CSMon(lvl, "", Abigail.hp*100, Abigail));
          allEList.Add(new PokeList.CSMon(lvl, "", Andrew.hp*100, Andrew));
          allEList.Add(new PokeList.CSMon(lvl, "", Bennet.hp*100, Bennet));
          allEList.Add(new PokeList.CSMon(lvl, "", Bijou.hp*100, Bijou));
+         allEList.Add(new PokeList.CSMon(lvl, "", Bowen.hp*100, Bowen));
          allEList.Add(new PokeList.CSMon(lvl, "", Byeongguk.hp*100, Byeongguk));
          allEList.Add(new PokeList.CSMon(lvl, "", Caleb.hp*100, Caleb));
          allEList.Add(new PokeList.CSMon(lvl, "", Catherine.hp*100, Catherine));
@@ -245,9 +264,12 @@ public class PokeList : MonoBehaviour
          allEList.Add(new PokeList.CSMon(lvl, "", Emily.hp*100, Emily));
          allEList.Add(new PokeList.CSMon(lvl, "", Evan.hp*100, Evan));
          allEList.Add(new PokeList.CSMon(lvl, "", Grace.hp*100, Grace));
+         allEList.Add(new PokeList.CSMon(lvl, "", Izzie.hp*100, Izzie));
+         allEList.Add(new PokeList.CSMon(lvl, "", Jessica.hp*100, Jessica));
          allEList.Add(new PokeList.CSMon(lvl, "", Krish.hp*100, Krish));
          allEList.Add(new PokeList.CSMon(lvl, "", Mehki.hp*100, Mehki));
          allEList.Add(new PokeList.CSMon(lvl, "", Minghan.hp*100, Minghan));
+         allEList.Add(new PokeList.CSMon(lvl, "", Nancy.hp*100, Nancy));
          allEList.Add(new PokeList.CSMon(lvl, "", Nilesh.hp*100, Nilesh));
          allEList.Add(new PokeList.CSMon(lvl, "", Om.hp*100, Om));
          allEList.Add(new PokeList.CSMon(lvl, "", Owen.hp*100, Owen));

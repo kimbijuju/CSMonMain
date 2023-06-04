@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class Room1SpawnerScript : MonoBehaviour
 {
     public GameObject player;
-    public int timer;
+    
     // Start is called before the first frame update
     void Start()
     {
-        timer=0;
+        
     }
 
     // Update is called once per frame

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class bossSpeech : MonoBehaviour
 {
@@ -32,6 +33,15 @@ public class bossSpeech : MonoBehaviour
             texter.text=tList.Peek();
             if(Input.GetKeyDown("space")){
                 tList.Dequeue();
+                if(texter.text=="Oh well, let's see just how much you've grown!"){
+                    PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Robert.hp*70, PokeList.Robert));
+                    PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Doran.hp*70, PokeList.Doran));
+                    PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Tate.hp*70, PokeList.Tate));
+                    PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Yang.hp*70, PokeList.Yang));
+
+
+                    SceneManager.LoadScene("DemoBattleRoom");
+                }
             }
         }
     }
