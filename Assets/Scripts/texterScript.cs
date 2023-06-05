@@ -22,6 +22,7 @@ public class texterScript : MonoBehaviour
     public Color yellowCol;
     public Color semiTransCol;
     public int buttonNum;
+    public int[] NumItems;
 
     //variables for choices made
     public static Sprite tonySprite;
@@ -62,6 +63,7 @@ public class texterScript : MonoBehaviour
         texts.Enqueue("Choose one of these CS'Mon to start with!");
         texts.Enqueue("Interesting choice... Well, you'll find more CS'Mon to catch soon enough!");
         texts.Enqueue("Now go forth, into the world of CS'Mon!");
+        NumItems = new int[5];
     }
     
     // Update is called once per frame
