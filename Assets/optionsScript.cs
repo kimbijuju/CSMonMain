@@ -84,7 +84,7 @@ public class optionsScript : MonoBehaviour
             itemButton.GetComponent<SpriteRenderer>().sprite=itemOn;
             teamButton.GetComponent<SpriteRenderer>().sprite=teamOff;
             if(Input.GetKeyDown("space")){
-
+                SceneManager.LoadScene("Item Scene");
             }
         }
 
