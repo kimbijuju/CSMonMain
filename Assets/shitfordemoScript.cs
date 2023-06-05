@@ -21,9 +21,9 @@ public class shitfordemoScript : MonoBehaviour
         texterScript.playerPos.x=-6f;
         texterScript.playerPos.y=-1f;
 
-        texterScript.currLvlScene="Level10Room";
+        texterScript.currLvlScene="Level9Room";
 
-        SceneManager.LoadScene("Level10Room");
+        SceneManager.LoadScene("Level9Room");
 
         
     }

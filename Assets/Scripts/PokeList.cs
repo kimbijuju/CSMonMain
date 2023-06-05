@@ -155,6 +155,8 @@ public class PokeList : MonoBehaviour
     //possible CSMon you can catch
     public static List<CSMonRef> Room1CSMon= new List<CSMonRef>();
     public static List<CSMonRef> Room2CSMon= new List<CSMonRef>();
+    public static List<CSMonRef> Room9CSMon= new List<CSMonRef>();
+    public static List<CSMonRef> LegendaryCSMon= new List<CSMonRef>();
 
     // Update is called once per frame
     void Start()
@@ -215,6 +217,18 @@ public class PokeList : MonoBehaviour
          Room2CSMon.Add(Owen);
          Room2CSMon.Add(Emily);
          
+
+
+
+
+         Room9CSMon.Add(Peter);
+         Room9CSMon.Add(Jessica);
+         Room9CSMon.Add(Nancy);
+
+         LegendaryCSMon.Add(Catherine);
+         LegendaryCSMon.Add(Byeongguk);
+         LegendaryCSMon.Add(Yunxin);
+
 
          int lvl=100;
          allList.Add(new PokeList.CSMon(lvl, "", Aadya.hp*100, Aadya));
