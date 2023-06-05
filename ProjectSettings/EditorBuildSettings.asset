@@ -56,4 +56,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Challenged Scene.unity
     guid: f2ca6a4e8b1610c48ad48a5f083f55b6
+  - enabled: 1
+    path: Assets/Scenes/Item Scene.unity
+    guid: 20a14d4602133fe4cbabb5b623136f04
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: c817fdd4eef618c4997f55f4fc7314e5
   m_configObjects: {}

@@ -22,7 +22,7 @@ public class texterScript : MonoBehaviour
     public Color yellowCol;
     public Color semiTransCol;
     public int buttonNum;
-    public int[] NumItems;
+    public static int[] NumItems;
 
     //variables for choices made
     public static Sprite tonySprite;

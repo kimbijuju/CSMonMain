@@ -15,31 +15,68 @@ public class itemScript : MonoBehaviour
     public Sprite teamRevive;
     public Text numOfPotion;
     public bool selected;
+
+    public Text desc;
+
     public Sprite exitOn;
     public Sprite exitOff;
     public GameObject exitButton;
+    
+    public GameObject useButton;
+    public Sprite useOn;
+    public Sprite useOff;
+    
     public int buttonNum;
+
+
     public GameObject CSMonButton;
     public int CSMonIndex;
+
+    public string itemsText;
+
+    public Color transCol;
+    public Color showCol;
+    public Color redCol;
+    public Color greenCol;
+
+    public Image hpBar;
+    public Image fullBar;
+    public Vector2 hpSet;
     // Start is called before the first frame update
     void Start()
     {
+        hpSet= new Vector2(0,51);
+
         ItemIndex = 0;
         selected = false;
         buttonNum = -1;
         CSMonIndex = 0;
+
+        transCol=new Color(1,1,1,0f);
+        showCol=new Color(1,1,1,1f);
+
+        greenCol=new Color(0,1,0,1f);
+
+        redCol=new Color(1,0,0,1f);
     }
 
 
     // Update is called once per frame\
     void Update()
     {
-        /*
+        
         if (selected == false)
         {
+            CSMonButton.GetComponent<SpriteRenderer>().color=transCol;
+            fullBar.GetComponent<Image>().color=transCol;
+            hpBar.GetComponent<Image>().color=transCol;
+            GetComponent<SpriteRenderer>().color=showCol;
+
+            numOfPotion.text=""+texterScript.NumItems[ItemIndex];
+
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
             {
-                buttonNum *= 1;
+                buttonNum *= -1;
             }
             else if (Input.GetKeyDown(KeyCode.D))
             {
@@ -49,7 +86,7 @@ public class itemScript : MonoBehaviour
             {
                 ItemIndex--;
             }
-            else if (ItemIndex >= 5)
+            if (ItemIndex >4)
             {
                 ItemIndex = 0;
             }
@@ -57,13 +94,40 @@ public class itemScript : MonoBehaviour
             {
                 ItemIndex = 4;
             }
-            numOfPotion.text = NumItems[ItemIndex];
-            else if (ItemIndex == 0)
+            
+            
+            if (ItemIndex == 0)
             {
-                GetComponent<SpriteRenderer>().sprite = 50heal;
+                GetComponent<SpriteRenderer>().sprite = fiveheal;
+                desc.text="Heals 50% of one CS'Mon's total hp.";
+
             }
-            else if (buttonNum == -1)
+            else if (ItemIndex == 1)
             {
+                GetComponent<SpriteRenderer>().sprite = sevenheal;
+                desc.text="Heals 75% of one CS'Mon's total hp.";
+            }
+            else if (ItemIndex == 2)
+            {
+                GetComponent<SpriteRenderer>().sprite = oneheal;
+                desc.text="Heals 100% of one CS'Mon's total hp.";
+            }
+            else if (ItemIndex == 3)
+            {
+                GetComponent<SpriteRenderer>().sprite = singleRevive;
+                desc.text="Revives one CS'Mon to full health.";
+            }
+            else if (ItemIndex == 4)
+            {
+                GetComponent<SpriteRenderer>().sprite = teamRevive;
+                desc.text="Revives your whole team to full health.";
+            }
+            
+
+            if (buttonNum == -1)
+            {
+                exitButton.GetComponent<SpriteRenderer>().sprite=exitOn;
+                useButton.GetComponent<SpriteRenderer>().sprite=useOff;
                 if (Input.GetKeyDown("space"))
                 {
                     SceneManager.LoadScene(texterScript.currLvlScene);
@@ -71,17 +135,37 @@ public class itemScript : MonoBehaviour
             }
             else if (buttonNum == 1)
             {
+                exitButton.GetComponent<SpriteRenderer>().sprite=exitOff;
+                useButton.GetComponent<SpriteRenderer>().sprite=useOn;
                 if (Input.GetKeyDown("space"))
                 {
-                    seleected = true;
+                    if(texterScript.NumItems[ItemIndex]>0){
+                        if(ItemIndex==4){
+                            foreach(PokeList.CSMon i in PokeList.ObtainedList){
+                                i.currhp=i.totalHp();
+
+                            }
+                            texterScript.NumItems[ItemIndex]--;
+                        }
+                        else
+                            selected = true;
+                    }
                 }
             }
         }
-        */
+        
         else if (selected == true) 
         {
+            hpSet.x=274*PokeList.ObtainedList[CSMonIndex].currhp/PokeList.ObtainedList[CSMonIndex].totalHp();
+            hpBar.rectTransform.sizeDelta=hpSet;
+            numOfPotion.text="";
+            CSMonButton.GetComponent<SpriteRenderer>().color=showCol;
+            fullBar.GetComponent<Image>().color=redCol;
+            hpBar.GetComponent<Image>().color=greenCol;
+            GetComponent<SpriteRenderer>().color=transCol;
+
             CSMonButton.GetComponent<SpriteRenderer>().sprite = PokeList.ObtainedList[CSMonIndex].refMon.look;
-            else if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D))
             {
                 CSMonIndex++;
             }
@@ -90,35 +174,41 @@ public class itemScript : MonoBehaviour
             {
                 CSMonIndex--;
             }
-            else if (CSMonIndex >= PokeList.ObtainedList.length)
+            if (CSMonIndex >= PokeList.ObtainedList.Count)
             {
                 CSMonIndex = 0;
             }
-            else if (CSMonIndex < PokeList.ObtainedList.length)
+            else if (CSMonIndex < 0)
             {
-                CSMonIndex = PokeList.ObtainedList.length - 1;
+                CSMonIndex = PokeList.ObtainedList.Count - 1;
             }
-            else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
             {
-                buttonNum *= 1;
+                buttonNum *= -1;
             }
-            else if (buttonNum == -1)
+            if (buttonNum == -1)
             {
+                exitButton.GetComponent<SpriteRenderer>().sprite=exitOn;
+                useButton.GetComponent<SpriteRenderer>().sprite=useOff;
+
                 if (Input.GetKeyDown("space"))
                 {
                     selected = false;
                 }
             }
-        /*
+            
             else if (buttonNum == 1)
             {
-                if (Input.GetKeyDown("space")
+                exitButton.GetComponent<SpriteRenderer>().sprite=exitOff;
+                useButton.GetComponent<SpriteRenderer>().sprite=useOn;
+
+                if (Input.GetKeyDown("space"))
                 {
                     if (ItemIndex == 0)
                     {
                         if (PokeList.ObtainedList[CSMonIndex].currhp > 0)
                         {
-                            PokeList.ObtainedList[CSMonIndex].currhp = PokeList.ObtainedList[CSMonIndex].currhp + PokeList.ObtainedList[CSMonIndex].totalHp() / 2);
+                            PokeList.ObtainedList[CSMonIndex].currhp = PokeList.ObtainedList[CSMonIndex].currhp + (PokeList.ObtainedList[CSMonIndex].totalHp() / 2);
                             if (PokeList.ObtainedList[CSMonIndex].currhp > PokeList.ObtainedList[CSMonIndex].totalHp())
                             {
                                 PokeList.ObtainedList[CSMonIndex].currhp = PokeList.ObtainedList[CSMonIndex].totalHp();
@@ -131,7 +221,7 @@ public class itemScript : MonoBehaviour
                     {
                         if (PokeList.ObtainedList[CSMonIndex].currhp > 0)
                         {
-                            PokeList.ObtainedList[CSMonIndex].currhp = PokeList.ObtainedList[CSMonIndex].currhp + PokeList.ObtainedList[CSMonIndex].totalHp() *3 / 4);
+                            PokeList.ObtainedList[CSMonIndex].currhp = PokeList.ObtainedList[CSMonIndex].currhp + (PokeList.ObtainedList[CSMonIndex].totalHp() *3 / 4);
                             if (PokeList.ObtainedList[CSMonIndex].currhp > PokeList.ObtainedList[CSMonIndex].totalHp())
                             {
                                 PokeList.ObtainedList[CSMonIndex].currhp = PokeList.ObtainedList[CSMonIndex].totalHp();
@@ -149,6 +239,7 @@ public class itemScript : MonoBehaviour
                             selected = false;
                         }
                     }
+                
                     else if (ItemIndex == 3)
                     {
                         PokeList.ObtainedList[CSMonIndex].currhp = PokeList.ObtainedList[CSMonIndex].totalHp();
@@ -157,7 +248,7 @@ public class itemScript : MonoBehaviour
                     }
                 }
             }
-        */
+        
         } 
     }
 }

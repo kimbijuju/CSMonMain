@@ -39,7 +39,7 @@ public class bossSpeech : MonoBehaviour
                     PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Tate.hp*70, PokeList.Tate));
                     PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Yang.hp*70, PokeList.Yang));
 
-
+                    texterScript.currLvlScene="CreditsScene";
                     SceneManager.LoadScene("DemoBattleRoom");
                 }
             }

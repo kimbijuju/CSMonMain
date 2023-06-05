@@ -23,7 +23,7 @@ public class Rm9SpawnerScript : MonoBehaviour
             texterScript.currLvlScene="Level10Room";
             SceneManager.LoadScene("Level10Room");
         } 
-        if(PlayerController.spawnNow==true){
+        else if(PlayerController.spawnNow==true){
             PlayerController.spawnNow=false;
             if(Random.Range(0,10)>7){
                 spawnScript.spawnBattle(100,100, PokeList.LegendaryCSMon);
