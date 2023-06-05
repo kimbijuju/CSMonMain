@@ -559,8 +559,8 @@ MonoBehaviour:
   attackOff: {fileID: 21300000, guid: 32a7b868275299544ac4682cfc5efe56, type: 3}
   swapOn: {fileID: 21300000, guid: 626f026ef9dff7646a4b1e16b4ed15ea, type: 3}
   swapOff: {fileID: 21300000, guid: df917975b8f8aeb488d3a0e38666611f, type: 3}
-  itemOn: {fileID: 21300000, guid: 6aecc5c3709cf15438854c0afd7b255a, type: 3}
-  itemOff: {fileID: 21300000, guid: 1379c91922449f14c9a92be535281ae5, type: 3}
+  itemOn: {fileID: 21300000, guid: e08990ea3e3fe0749a6c15fda92f2b72, type: 3}
+  itemOff: {fileID: 21300000, guid: d2fe5ed6653dbc447a6382b39ad6a9d0, type: 3}
   transCol: {r: 0, g: 0, b: 0, a: 0}
   showCol: {r: 0, g: 0, b: 0, a: 0}
   yellowCol: {r: 0, g: 0, b: 0, a: 0}
@@ -2198,7 +2198,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c115be5e5a061074689f3d0d37e15623, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2fe5ed6653dbc447a6382b39ad6a9d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2217,8 +2217,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859873743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.79, y: 4.35, z: 1}
-  m_LocalScale: {x: 7.117992, y: 5.0256543, z: 1}
+  m_LocalPosition: {x: -0.7104, y: 4.3358, z: 1}
+  m_LocalScale: {x: 3.5103319, y: 2.7586355, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
