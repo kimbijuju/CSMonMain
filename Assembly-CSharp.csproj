@@ -64,6 +64,10 @@
      <Compile Include="Assets\Scripts\csDexButtonScript.cs" />
      <Compile Include="Assets\pickTeamsScript.cs" />
      <Compile Include="Assets\homeScript.cs" />
+     <Compile Include="Assets\bossSpeech.cs" />
+     <Compile Include="Assets\shitfordemoScript.cs" />
+     <Compile Include="Assets\Rm10SpawnScript.cs" />
+     <Compile Include="Assets\challengedScript.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
