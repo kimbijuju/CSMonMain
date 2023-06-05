@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/pickScreen.unity
     guid: b27aa1114005c5f469fb411badfa9194
   - enabled: 1
-    path: Assets/Scenes/Level3Room.unity
+    path: Assets/Scenes/Level4Room.unity
     guid: 3a063c426ea170843b8b24db15fc9b94
   - enabled: 1
     path: Assets/Scenes/Level1Room.unity
