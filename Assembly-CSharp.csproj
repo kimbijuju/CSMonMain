@@ -68,6 +68,9 @@
      <Compile Include="Assets\shitfordemoScript.cs" />
      <Compile Include="Assets\Rm10SpawnScript.cs" />
      <Compile Include="Assets\challengedScript.cs" />
+     <Compile Include="Assets\Scripts\itemScript.cs" />
+     <Compile Include="Assets\Rm9SpawnerScript.cs" />
+     <Compile Include="Assets\creditScript.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

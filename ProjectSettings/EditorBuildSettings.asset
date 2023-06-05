@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level10Room.unity
     guid: 537fbceae584996498039a9c82556989
   - enabled: 1
-    path: Assets/Scenes/DemoRoom10.unity
+    path: Assets/Scenes/BossBattle.unity
     guid: 5cb06bb2a4f5e484a92129208fdcb151
   - enabled: 1
     path: Assets/Scenes/Level9Room.unity
