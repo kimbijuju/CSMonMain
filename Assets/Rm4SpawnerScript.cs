@@ -15,8 +15,9 @@ public class Rm4SpawnerScript : MonoBehaviour
         
             texterScript.playerPos.x=-4.2f;
             texterScript.playerPos.y=-1.1f;
-            texterScript.currLvlScene="Level4Room";
-            SceneManager.LoadScene("Level4Room");
+            texterScript.currLvlScene="Level5Room";
+            texterScript.NumItems[0]+=2;
+            SceneManager.LoadScene("Level5Room");
         } 
         if(PlayerController.spawnNow==true){
             PlayerController.spawnNow=false;

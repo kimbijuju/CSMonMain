@@ -21,6 +21,7 @@ public class Rm9SpawnerScript : MonoBehaviour
             texterScript.playerPos.x=-30f;
             texterScript.playerPos.y=-2f;
             texterScript.currLvlScene="Level10Room";
+            texterScript.NumItems[4]++;
             SceneManager.LoadScene("Level10Room");
         } 
         else if(PlayerController.spawnNow==true){

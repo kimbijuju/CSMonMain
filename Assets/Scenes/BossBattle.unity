@@ -653,6 +653,10 @@ MonoBehaviour:
   eStatus: 
   playerDmg: 0
   enemyDmg: 0
+  pBurning: 0
+  eBurning: 0
+  pEffect: 0
+  eEffect: 0
 --- !u!1 &234343274
 GameObject:
   m_ObjectHideFlags: 0

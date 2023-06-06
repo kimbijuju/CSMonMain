@@ -23,6 +23,7 @@ public class Rm3SpawnScript : MonoBehaviour
             texterScript.playerPos.x=-7.1f;
             texterScript.playerPos.y=-1.7f;
             texterScript.currLvlScene="Level4Room";
+            texterScript.NumItems[1]++;
             SceneManager.LoadScene("Level4Room");
         } 
         if(PlayerController.spawnNow==true){

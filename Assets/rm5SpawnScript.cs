@@ -11,13 +11,14 @@ public class rm5SpawnScript : MonoBehaviour
     {
         
 
-        if(player.transform.position.x>17.7 && player.transform.position.x<21.1 && player.transform.position.y>-10 && player.transform.position.y<-7){
+        if(player.transform.position.x>18 && player.transform.position.x<21 && player.transform.position.y>-7.4 && player.transform.position.y>-9){
 
         
-            texterScript.playerPos.x=-4.2f;
-            texterScript.playerPos.y=-1.1f;
-            texterScript.currLvlScene="Level4Room";
-            SceneManager.LoadScene("Level4Room");
+            texterScript.playerPos.x=-6.7f;
+            texterScript.playerPos.y=3f;
+            texterScript.currLvlScene="Level6Room";
+            texterScript.NumItems[2]++;
+            SceneManager.LoadScene("Level6Room");
         } 
         if(PlayerController.spawnNow==true){
             PlayerController.spawnNow=false;
