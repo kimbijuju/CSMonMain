@@ -20,14 +20,14 @@ public class Room2SpawnerScript : MonoBehaviour
         if(player.transform.position.x>44.4 && player.transform.position.y>14){
 
         
-            texterScript.playerPos.x=-6f;
-            texterScript.playerPos.y=-1f;
+            texterScript.playerPos.x=-6.7f;
+            texterScript.playerPos.y=-0.8f;
             texterScript.currLvlScene="Level3Room";
             SceneManager.LoadScene("Level3Room");
         } 
         if(PlayerController.spawnNow==true){
             PlayerController.spawnNow=false;
-            spawnScript.spawnBattle(6,10, PokeList.Room2CSMon);
+            spawnScript.spawnBattle(7,10, PokeList.Room1CSMon);
             SceneManager.LoadScene("DemoBattleRoom");
         }
     }

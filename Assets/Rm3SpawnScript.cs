@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Room1SpawnerScript : MonoBehaviour
+public class Rm3SpawnScript : MonoBehaviour
 {
+    // Start is called before the first frame update
     public GameObject player;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,21 +16,19 @@ public class Room1SpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(player.transform.position.x<-21 && player.transform.position.y>15.5){
+
         
-        
-        if(player.transform.position.x>41.44 && player.transform.position.y>14){
-            texterScript.playerPos.x=-6f;
-            texterScript.playerPos.y=-1f;
-            texterScript.currLvlScene="Level2Room";
-            SceneManager.LoadScene("Level2Room");
-            
-        }
-         
+            texterScript.playerPos.x=-7.1f;
+            texterScript.playerPos.y=-1.7f;
+            texterScript.currLvlScene="Level4Room";
+            SceneManager.LoadScene("Level4Room");
+        } 
         if(PlayerController.spawnNow==true){
             PlayerController.spawnNow=false;
-            spawnScript.spawnBattle(4,7, PokeList.Room1CSMon);
+            spawnScript.spawnBattle(12,15, PokeList.Room2CSMon);
             SceneManager.LoadScene("DemoBattleRoom");
         }
-
     }
 }

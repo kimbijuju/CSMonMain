@@ -155,13 +155,15 @@ public class PokeList : MonoBehaviour
     //possible CSMon you can catch
     public static List<CSMonRef> Room1CSMon= new List<CSMonRef>();
     public static List<CSMonRef> Room2CSMon= new List<CSMonRef>();
+    public static List<CSMonRef> Room3CSMon= new List<CSMonRef>();
+    
     public static List<CSMonRef> Room9CSMon= new List<CSMonRef>();
     public static List<CSMonRef> LegendaryCSMon= new List<CSMonRef>();
 
     // Update is called once per frame
     void Start()
     {
-         Aadya= new CSMonRef("Aadya", 90, 30, 10, 90, 30, "Shroomform", "Grass", AadyaSprite, "");
+         Aadya= new CSMonRef("Aadya", 100, 30, 10, 90, 30, "Shroomform", "Grass", AadyaSprite, "");
          Abigail= new CSMonRef("Abigail", 80, 90, 50, 30, 10, "Homerun", "Grass", AbigailSprite, "");
          Andrew= new CSMonRef("Andrew", 50, 60, 30, 80, 20, "Senior Blitz", "Fire", AndrewSprite, "Each time Senior Blitz lands, Andrew's speed doubles, capping at x8");
          Bennet= new CSMonRef("Bennet", 70, 30, 60, 90, 40, "Smoulder", "Fire", BennetSprite, "When Smoulder crits, it instead burns the target for the next 3 turns");
@@ -183,11 +185,11 @@ public class PokeList : MonoBehaviour
          Nancy=new CSMonRef("Nancy", 90, 30, 20, 60, 50, "Pitch Slap", "Water", NancySprite, "");
          Nilesh= new CSMonRef("Nilesh", 100, 40, 40, 70, 20, "Blazing Mustache", "Fire", NileshSprite, "If Blazing Mustache lands, Nilesh's HP is set to 70% its current amount");
          Om= new CSMonRef("Om", 40, 50, 90, 90, 20, "Omelette Strike", "Fire", OmSprite, "");
-         Owen= new CSMonRef("Owen", 40, 60, 60, 80, 70, "Slap", "Water", OwenSprite, "");   
+         Owen= new CSMonRef("Owen", 40, 60, 60, 80, 70, "Slap", "Grass", OwenSprite, "");   
          Peter= new CSMonRef("Peter", 100, 65, 25, 95, 20, "Snore", "Fire", PeterSprite, "Snore only does damage every 2nd usage");
          Ruthie= new CSMonRef("Ruthie", 40, 30, 70, 80, 20, "Hair Dew", "Water", RuthieSprite, "Opponent's accuracy is halved");
          Steve= new CSMonRef("Steve", 140 , 110, 10, 20, 10, "Rizz", "Water", SteveSprite, "If Rizz lands, Steve heals for 50% of Rizz's damage");
-         Steven= new CSMonRef("Steven", 75, 35, 40, 80, 20, "Malicious Massage", "Grass", StevenSprite, "Malicious Massage does more damage the lower Steven's current hp is");
+         Steven= new CSMonRef("Steven", 75, 35, 40, 80, 20, "Malicious Massage", "Water", StevenSprite, "Malicious Massage does more damage the lower Steven's current hp is");
          Vanessa= new CSMonRef("Vanessa", 50, 100, 95, 95, 20, "Volleyball Set", "Water", VanessaSprite, "Volleyball Set only does damage every 2nd usage");
          Vishwa= new CSMonRef("Vishwa", 60, 40, 40, 90, 20, "Shave", "Grass", VishwaSprite, "Vishwa's speed increases the lower his hp is");
          Yunxin= new CSMonRef("Yunxin", 30, 40, 90, 65, 20, "Hack", "Legendary", YunxinSprite, "If Hack lands, the opponent's next attack will fail");
@@ -206,21 +208,25 @@ public class PokeList : MonoBehaviour
          Room1CSMon.Add(Steve);
          Room1CSMon.Add(Vanessa);
          Room1CSMon.Add(Om);
-         Room1CSMon.Add(Krish);
-         Room1CSMon.Add(Andrew);
-         Room1CSMon.Add(Steven);
-
+         
+         Room2CSMon.Add(Krish);
+         Room2CSMon.Add(Andrew);
+         Room2CSMon.Add(Steven);
          Room2CSMon.Add(Caleb);
          Room2CSMon.Add(Bennet);
          Room2CSMon.Add(Daniel);
-         Room2CSMon.Add(Minghan);
-         Room2CSMon.Add(Owen);
-         Room2CSMon.Add(Emily);
          
+         Room3CSMon.Add(Minghan);
+         Room3CSMon.Add(Izzie);
+         Room3CSMon.Add(Emily);
+         Room3CSMon.Add(Abigail);
+         Room3CSMon.Add(Mehki);
+         Room3CSMon.Add(Ruthie);
 
 
-
-
+         Room9CSMon.Add(Grace);
+         Room9CSMon.Add(Bowen);
+         Room9CSMon.Add(Owen);
          Room9CSMon.Add(Peter);
          Room9CSMon.Add(Jessica);
          Room9CSMon.Add(Nancy);

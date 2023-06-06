@@ -79210,7 +79210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652405601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.48, y: -0.89, z: 0.24022341}
+  m_LocalPosition: {x: 2.68, y: 14.99, z: 0.24022341}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79239,9 +79239,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1706197909}
-  - component: {fileID: 1706197910}
+  - component: {fileID: 1706197911}
   m_Layer: 0
-  m_Name: Room2Spawner
+  m_Name: Room4Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79262,7 +79262,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1706197910
+--- !u!114 &1706197911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79271,10 +79271,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1706197907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2589faf7119eea4381a715c06034d16, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f577782c9a445747b794aba7e70cfcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1652405601}
 --- !u!1 &1813491186
 GameObject:
   m_ObjectHideFlags: 0

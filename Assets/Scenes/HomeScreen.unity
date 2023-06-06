@@ -429,11 +429,15 @@ MonoBehaviour:
   RuthieSprite: {fileID: 21300000, guid: 3c2e87401c14ab342b7746a35da02f3e, type: 3}
   AbigailSprite: {fileID: 21300000, guid: a5933b5bdb4672e4382fe9cf2df42070, type: 3}
   VishwaSprite: {fileID: 21300000, guid: 1d09cdf5cc4324944aace767070cd40a, type: 3}
-  StevenSprite: {fileID: 21300000, guid: 25d51d47d2d3c59429f8ab5f522af34f, type: 3}
+  StevenSprite: {fileID: 21300000, guid: 50f5efc25e6da1a4b80bc45d1e90f7ba, type: 3}
   JessicaSprite: {fileID: 21300000, guid: b3e701b743e90f947802aa2a5ff20d33, type: 3}
   AndrewSprite: {fileID: 21300000, guid: 8603ada1100cc8f4abcc9887b6097ca3, type: 3}
   BennetSprite: {fileID: 21300000, guid: e24b394268b3f4d42a6e01d13c4e3147, type: 3}
   CalebSprite: {fileID: 21300000, guid: edcfe047cda719e4db893f26afe4667d, type: 3}
+  RobertSprite: {fileID: 0}
+  TateSprite: {fileID: 0}
+  YangSprite: {fileID: 0}
+  DoranSprite: {fileID: 0}
 --- !u!4 &1299013612
 Transform:
   m_ObjectHideFlags: 0
