@@ -40,8 +40,11 @@ public class PokeList : MonoBehaviour
 
     public Sprite RobertSprite;
     public Sprite TateSprite;
+    public Sprite GlowackiSprite;
+    public Sprite LawSprite;
+    public Sprite HamadaSprite;
     public Sprite YangSprite;
-    public Sprite DoranSprite;
+    
     
     
     //CSMon references
@@ -78,7 +81,9 @@ public class PokeList : MonoBehaviour
     
     public static CSMonRef Robert;
     public static CSMonRef Tate; 
-    public static CSMonRef Doran; 
+    public static CSMonRef Law;
+    public static CSMonRef Glowacki;
+    public static CSMonRef Hamada;
     public static CSMonRef Yang; 
     
 
@@ -195,9 +200,11 @@ public class PokeList : MonoBehaviour
          Yunxin= new CSMonRef("Yunxin", 30, 40, 90, 65, 20, "Hack", "Legendary", YunxinSprite, "If Hack lands, the opponent's next attack will fail");
          
 
-         Robert= new CSMonRef("Robert", 90, 50, 10, 70, 20, "Block", "Legendary", RobertSprite, "");
-         Doran= new CSMonRef("Doran", 60, 50, 50, 70, 20, "Lazer", "Fire", DoranSprite, "");
-         Tate= new CSMonRef("Tate", 60, 50, 50, 70, 20, "Calculus", "Water", DoranSprite, "");
+         Robert= new CSMonRef("Robert", 90, 50, 10, 60, 20, "Block", "Legendary", RobertSprite, "");
+         Law= new CSMonRef("Law", 60, 50, 50, 70, 20, "The Law", "Fire", LawSprite, "");
+         Tate= new CSMonRef("Tate", 60, 50, 50, 70, 20, "Plus C", "Water", TateSprite, "");
+         Glowacki= new CSMonRef("Glowacki", 60, 50, 50, 70, 20, "Dunk", "Grass", GlowackiSprite, "");
+         Hamada= new CSMonRef("Hamada", 100, 20, 30, 70, 20, "Padlet", "Legendary", HamadaSprite, "");
          Yang= new CSMonRef("Yang", 30, 70, 80, 70, 20, "CTCI", "Legendary", YangSprite, "");
          
          

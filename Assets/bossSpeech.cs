@@ -35,9 +35,12 @@ public class bossSpeech : MonoBehaviour
                 tList.Dequeue();
                 if(texter.text=="Oh well, let's see just how much you've grown!"){
                     PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Robert.hp*70, PokeList.Robert));
-                    PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Doran.hp*70, PokeList.Doran));
+                    PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Law.hp*70, PokeList.Law));
                     PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Tate.hp*70, PokeList.Tate));
+                    PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Glowacki.hp*70, PokeList.Glowacki));
+                    PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Hamada.hp*70, PokeList.Hamada));
                     PokeList.enemyList.Add(new PokeList.CSMon(70, "", PokeList.Yang.hp*70, PokeList.Yang));
+
 
                     texterScript.currLvlScene="CreditsScene";
                     SceneManager.LoadScene("DemoBattleRoom");

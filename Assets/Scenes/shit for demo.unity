@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 819693229}
-  - component: {fileID: 819693228}
+  - component: {fileID: 819693230}
   m_Layer: 0
   m_Name: PokeList
   m_TagString: Untagged
@@ -140,7 +140,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &819693228
+--- !u!4 &819693229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819693227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3261766, y: 0.90476394, z: 0.25765702}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &819693230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,27 +192,17 @@ MonoBehaviour:
   RuthieSprite: {fileID: 21300000, guid: 3c2e87401c14ab342b7746a35da02f3e, type: 3}
   AbigailSprite: {fileID: 21300000, guid: a5933b5bdb4672e4382fe9cf2df42070, type: 3}
   VishwaSprite: {fileID: 21300000, guid: 1d09cdf5cc4324944aace767070cd40a, type: 3}
-  StevenSprite: {fileID: 21300000, guid: 25d51d47d2d3c59429f8ab5f522af34f, type: 3}
+  StevenSprite: {fileID: 21300000, guid: 50f5efc25e6da1a4b80bc45d1e90f7ba, type: 3}
   JessicaSprite: {fileID: 21300000, guid: b3e701b743e90f947802aa2a5ff20d33, type: 3}
   AndrewSprite: {fileID: 21300000, guid: 8603ada1100cc8f4abcc9887b6097ca3, type: 3}
   BennetSprite: {fileID: 21300000, guid: e24b394268b3f4d42a6e01d13c4e3147, type: 3}
   CalebSprite: {fileID: 21300000, guid: edcfe047cda719e4db893f26afe4667d, type: 3}
-  RobertSprite: {fileID: 0}
---- !u!4 &819693229
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819693227}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3261766, y: 0.90476394, z: 0.25765702}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  RobertSprite: {fileID: 21300000, guid: 8c90d314479aeca4bbdc3bd6aa32c54b, type: 3}
+  TateSprite: {fileID: 21300000, guid: 3a07c4c9e3a3b2749b7aa24bbc97708f, type: 3}
+  GlowackiSprite: {fileID: 21300000, guid: 77ebccf47f0ea124f8bcdc56b4e486e9, type: 3}
+  LawSprite: {fileID: 21300000, guid: e172936cd08d7ab4a9aad0d1b6837f33, type: 3}
+  HamadaSprite: {fileID: 21300000, guid: 4377e77b05538f84fab2cc625d767d45, type: 3}
+  YangSprite: {fileID: 21300000, guid: fb4530c7de454bf42ad0721ed7b6bfe2, type: 3}
 --- !u!1 &1295073442
 GameObject:
   m_ObjectHideFlags: 0
