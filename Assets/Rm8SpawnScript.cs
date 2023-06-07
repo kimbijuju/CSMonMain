@@ -13,8 +13,8 @@ public class Rm8SpawnScript : MonoBehaviour
         if(player.transform.position.x>235 && player.transform.position.y>-9 && player.transform.position.y<-6.9){
 
         
-            texterScript.playerPos.x=-16f;
-            texterScript.playerPos.y=0.2f;
+            texterScript.playerPos.x=13.4f;
+            texterScript.playerPos.y=-11.2f;
             texterScript.currLvlScene="Level9Room";
             texterScript.NumItems[3]++;
             SceneManager.LoadScene("Level9Room");

@@ -38,9 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossBattle.unity
     guid: 5cb06bb2a4f5e484a92129208fdcb151
-  - enabled: 1
-    path: Assets/Scenes/Level9Room.unity
-    guid: 356378f0bf4ec2f4aaec5e7aabf03e55
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/demoBattlePrep.unity
     guid: 3e3e4efc931afb64bbe3fdc48f19c721
@@ -72,11 +72,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Level5Room.unity
     guid: 98cbb20e100b2194493caf935c128b30
   - enabled: 1
-    path: Assets/Scenes/Level7Room.unity
-    guid: 9b62734be40ed7c4d9767d20975ed206
-  - enabled: 1
     path: Assets/Scenes/Level8Room.unity
-    guid: df423fd7e0b7027459c332ea0fdc0250
+    guid: f79ab8d4ad518314697d7cc9528f97ab
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Level9Room.unity
+    guid: 164af905613fa524bb0a462c09c3879a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Level7Room.unity
+    guid: 3f7467491541fda4eaa591b630219c34
   - enabled: 1
     path: Assets/Scenes/Level10Room Remake.unity
     guid: 05517f5c9e165724fb4c7c256a472d37

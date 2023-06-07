@@ -15,7 +15,7 @@ public class Rm9SpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.transform.position.x>48 ){
+        if(player.transform.position.x>47 && player.transform.position.y>-7.7 && player.transform.position.y<-5.2){
 
         
             texterScript.playerPos.x=-31f;

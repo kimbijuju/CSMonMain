@@ -12,11 +12,11 @@ public class Rm7SpawnScript : MonoBehaviour
     {
         
 
-        if(player.transform.position.x>27 && player.transform.position.x<30 && player.transform.position.y>31 && player.transform.position.y<33){
+        if(player.transform.position.x>46.1 && player.transform.position.y<-20.3){
 
         
-            texterScript.playerPos.x=194f;
-            texterScript.playerPos.y=2f;
+            texterScript.playerPos.x=194.8f;
+            texterScript.playerPos.y=2.2f;
             texterScript.currLvlScene="Level8Room";
             texterScript.NumItems[2]+=2;
             SceneManager.LoadScene("Level8Room");

@@ -14,8 +14,8 @@ public class Rm6SpawnScript : MonoBehaviour
         if(player.transform.position.x>48 && player.transform.position.y>-3.6 && player.transform.position.y<-1.2){
 
         
-            texterScript.playerPos.x=-49.7f;
-            texterScript.playerPos.y=8.7f;
+            texterScript.playerPos.x=0f;
+            texterScript.playerPos.y=0f;
             texterScript.currLvlScene="Level7Room";
             texterScript.NumItems[1]+=2;
             SceneManager.LoadScene("Level7Room");
