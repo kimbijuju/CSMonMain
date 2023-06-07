@@ -18,11 +18,11 @@ public class Rm9SpawnerScript : MonoBehaviour
         if(player.transform.position.x>48 ){
 
         
-            texterScript.playerPos.x=-30f;
-            texterScript.playerPos.y=-2f;
-            texterScript.currLvlScene="Level10Room";
+            texterScript.playerPos.x=-31f;
+            texterScript.playerPos.y=4f;
+            texterScript.currLvlScene="Level10Room Remake";
             texterScript.NumItems[4]++;
-            SceneManager.LoadScene("Level10Room");
+            SceneManager.LoadScene("Level10Room Remake");
         } 
         else if(PlayerController.spawnNow==true){
             PlayerController.spawnNow=false;

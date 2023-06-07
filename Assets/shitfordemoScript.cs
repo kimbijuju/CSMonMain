@@ -22,12 +22,12 @@ public class shitfordemoScript : MonoBehaviour
         PokeList.ObtainedList.Add(new PokeList.CSMon(lvl, "", PokeList.Vishwa.hp*100, PokeList.Vishwa));
         PokeList.ObtainedList.Add(new PokeList.CSMon(lvl, "", PokeList.Yunxin.hp*100, PokeList.Yunxin));
 
-        texterScript.playerPos.x=197f;
-        texterScript.playerPos.y=24f;
+        texterScript.playerPos.x=-31f;
+        texterScript.playerPos.y=4f;
 
-        texterScript.currLvlScene="Level10Room";
+        texterScript.currLvlScene="Level10Room Remake";
 
-        SceneManager.LoadScene("Level10Room");
+        SceneManager.LoadScene("Level10Room Remake");
 
         
     }

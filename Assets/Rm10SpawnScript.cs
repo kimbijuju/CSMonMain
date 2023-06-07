@@ -15,14 +15,14 @@ public class Rm10SpawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.transform.position.x>9 && player.transform.position.x<15 ){
-            texterScript.playerPos.x=40f;
-            texterScript.playerPos.y=3f;
+        if(player.transform.position.x>-22 && player.transform.position.x<-20 ){
+            texterScript.playerPos.x=-14f;
+            texterScript.playerPos.y=4.5f;
             
             SceneManager.LoadScene("Challenged Scene");
             
         }
-        else if(player.transform.position.x>190 && player.transform.position.y>14 ){
+        else if(player.transform.position.x>35.28 && player.transform.position.x<42.28 && player.transform.position.y>-9.3 && player.transform.position.y<-3.6){
             
             
             SceneManager.LoadScene("BossSpeech");

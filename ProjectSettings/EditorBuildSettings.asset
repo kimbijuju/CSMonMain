@@ -77,4 +77,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level8Room.unity
     guid: df423fd7e0b7027459c332ea0fdc0250
+  - enabled: 1
+    path: Assets/Scenes/Level10Room Remake.unity
+    guid: 05517f5c9e165724fb4c7c256a472d37
   m_configObjects: {}
